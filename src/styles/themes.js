@@ -1,7 +1,7 @@
 export const lightTheme = {
   background: '#EBEBEB',           
   text: '#393939',                 
-  primary: '#0077cc',              
+  primary: '#b4cede',              
   cardBg: '#00000005',            
   borderColor: '#00000005',        
   subtitle: '#799283',            
