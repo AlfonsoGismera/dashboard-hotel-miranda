@@ -1,3 +1,4 @@
+// src/context/AuthContext.jsx
 import React, { createContext, useState, useEffect } from 'react';
 
 export const AuthContext = createContext();
@@ -7,8 +8,16 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+    // 1) Lee siempre lo que haya en localStorage
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) setUser(JSON.parse(stored));
+    if (stored) {
+      setUser(JSON.parse(stored));
+    } else {
+      // 2) Si no hay nada, auto‑login siempre (ideal para DEV)
+      const devUser = { name: 'DevAdmin' };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(devUser));
+      setUser(devUser);
+    }
   }, []);
 
   function login(username, password) {

@@ -1,0 +1,34 @@
+import React, { useContext } from 'react';
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import styled from 'styled-components';
+import { LanguageContext } from '../../context/LanguageContext';
+
+const data = [
+  { day: 'Sun', checkIn: 32, checkOut: 20 },
+  { day: 'Mon', checkIn: 28, checkOut: 18 },
+  /* … el resto de la semana … */
+];
+
+const Wrapper = styled.div`
+  background: ${({ theme }) => theme.background};
+  border-radius: 0.5rem;
+  padding: 1rem;
+`;
+
+export default function StatsChart() {
+  const { t } = useContext(LanguageContext);
+  return (
+    <Wrapper>
+      <h3>{t.bookings}</h3>
+      <ResponsiveContainer width="100%" height={250}>
+        <BarChart data={data}>
+          <XAxis dataKey="day" />
+          <YAxis />
+          <Tooltip />
+          <Bar dataKey="checkIn"  name={t.checkIn || 'Check In'}  stackId="a" />
+          <Bar dataKey="checkOut" name={t.checkOut} stackId="a" />
+        </BarChart>
+      </ResponsiveContainer>
+    </Wrapper>
+  );
+}

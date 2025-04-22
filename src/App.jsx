@@ -11,6 +11,8 @@ import RoomDetail from './pages/RoomDetail';
 import Users from './pages/Users';
 import UserDetail from './pages/UserDetail';
 import Contact from './pages/Contact';
+import 'react-calendar/dist/Calendar.css';
+
 
 function PrivateRoute({ children }) {
   const { user } = useContext(AuthContext);
