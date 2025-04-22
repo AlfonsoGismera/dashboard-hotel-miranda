@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <Bar>
-      <div>{/* Icon button to collapse sidebar */}</div>
+      <div>{}</div>
       <h2>{t.pageTitle}</h2>
       <div>
         <button onClick={toggleTheme}>{mode === 'light' ? '🌙' : '☀️'}</button>

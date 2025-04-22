@@ -12,7 +12,6 @@ export function AuthProvider({ children }) {
   }, []);
 
   function login(username, password) {
-    // hardcoded creds
     if (username === 'admin' && password === 'admin') {
       const u = { name: 'Admin' };
       localStorage.setItem(STORAGE_KEY, JSON.stringify(u));

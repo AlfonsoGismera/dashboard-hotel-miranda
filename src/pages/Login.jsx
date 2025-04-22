@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const { login } = useContext(AuthContext);
-  const [user, setUser] = useState('');
-  const [pass, setPass] = useState('');
+  const [user, setUser] = useState('admin');
+  const [pass, setPass] = useState('admin');
   const navigate = useNavigate();
 
   function handleSubmit(e) {
