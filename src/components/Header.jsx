@@ -64,7 +64,7 @@ const Badge = styled.span`
   right: 4px;
   background: ${({ bg }) => bg || '#E23428'};
   color: #FFFFFF;
-  border-radius: 50%;
+  border-radius: 30%;
   font-size: 0.6rem;
   padding: 0.15rem 0.35rem;
 `;
@@ -129,7 +129,7 @@ export default function Header() {
 
         <IconButton>
           <MessageSquare size={20} />
-          <Badge bg="#E23428">!</Badge>
+          <Badge bg="#212121">!</Badge>
         </IconButton>
 
         {/* Avatar con URL directa a la imagen */}

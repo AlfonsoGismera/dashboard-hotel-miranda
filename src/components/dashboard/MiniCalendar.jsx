@@ -6,7 +6,6 @@ import 'react-calendar/dist/Calendar.css';
 const Wrapper = styled.div`
   background: ${({ theme }) => theme.background};
   border-radius: 0.5rem;
-  padding: 1rem;
   height: 100%;
 `;
 
