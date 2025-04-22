@@ -1,36 +1,26 @@
 import React from 'react';
-import styled from 'styled-components';
 import Sidebar from './Sidebar';
 import Header from './Header';
+import styled from 'styled-components';
 
 const Container = styled.div`
   display: flex;
   background: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.text};
-  height: 100vh;
-  @media(max-width: 768px) {
-    flex-direction: column;
-  }
 `;
-const MainArea = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-`;
-const Content = styled.main`
+const Main = styled.main`
   flex: 1;
   padding: 1rem;
-  overflow-y: auto;
 `;
 
 export default function Layout({ children }) {
   return (
     <Container>
       <Sidebar />
-      <MainArea>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
         <Header />
-        <Content>{children}</Content>
-      </MainArea>
+        <Main>{children}</Main>
+      </div>
     </Container>
   );
 }

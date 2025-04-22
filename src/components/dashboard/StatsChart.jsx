@@ -4,9 +4,15 @@ import styled from 'styled-components';
 import { LanguageContext } from '../../context/LanguageContext';
 
 const data = [
-  { day: 'Sun', checkIn: 32, checkOut: 20 },
+  
   { day: 'Mon', checkIn: 28, checkOut: 18 },
-  /* … el resto de la semana … */
+  { day: 'Tue', checkIn: 18, checkOut: 38 },
+  { day: 'Wed', checkIn: 8, checkOut: 28 },
+  { day: 'Thu', checkIn: 12, checkOut: 22 },
+  { day: 'Fri', checkIn: 20, checkOut: 30 },
+  { day: 'Sat', checkIn: 25, checkOut: 15 },
+  { day: 'Sun', checkIn: 32, checkOut: 20 },
+  { day: 'Total', checkIn: 143, checkOut: 171 }
 ];
 
 const Wrapper = styled.div`
