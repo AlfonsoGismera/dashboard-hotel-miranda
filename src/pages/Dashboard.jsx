@@ -4,8 +4,7 @@ import { Calendar, Clock, Users, CheckCircle } from 'lucide-react';
 import SummaryCard from '../components/dashboard/SummaryCard';
 import MiniCalendar from '../components/dashboard/MiniCalendar';
 import StatsChart from '../components/dashboard/StatsChart';
-import BookingList from '../components/dashboard/BookingList';
-import QuickStats from '../components/dashboard/QuickStats';
+
 
 const PageWrapper = styled.div`
   display: flex;
@@ -39,22 +38,12 @@ const TwoColumns = styled.div`
   }
 `;
 
-const BottomSection = styled.div`
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-`;
-
-const TwoThirds = styled.div`
-  flex: 2;
-  min-width: 300px;
-`;
 
 const OneThird = styled.div`
   flex: 1;
   min-width: 300px;
 `;
-const reservedDates = [
+      const reservedDates = [
   { date: '2025-04-03', color: 'green' },
   { date: '2025-04-16', color: 'red' },
   { date: '2025-04-17', color: 'red' },
@@ -79,20 +68,6 @@ export default function Dashboard() {
   <StatsChart />
 </TwoColumns>
 
-      <TwoColumns>
-        <QuickStats titleKey="availableToday" value="683" />
-        <QuickStats titleKey="soldOutToday" value="156" />
-      </TwoColumns>
-
-      <BottomSection>
-        <TwoThirds>
-          <BookingList />
-        </TwoThirds>
-        <OneThird>
-          <h3>{/* título traducible */}</h3>
-          <p>{/* valores aquí */}</p>
-        </OneThird>
-      </BottomSection>
     </PageWrapper>
   );
 }

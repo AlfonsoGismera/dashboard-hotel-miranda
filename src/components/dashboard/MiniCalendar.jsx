@@ -71,17 +71,17 @@ const DaysInfo = styled.div`
   border-radius: 0.5rem;
   font-weight: bold;
 `;
-
 const ViewMoreContainer = styled.div`
   text-align: center;
   margin-top: 1rem;
 `;
 
 const ViewMoreText = styled.span`
-  color: ${({ theme }) => theme.primary || '#007bff'}; // Puedes ajustar el color
+  color: ${({ theme }) => theme.text }; 
   cursor: pointer;
 `;
-// Datos originales de días reservados
+
+// Datos de días reservados
 const reservedDates = [
   { date: '2025-04-03', color: 'green' },
   { date: '2025-04-16', color: 'red' },
@@ -146,14 +146,24 @@ export default function MiniCalendar() {
 
   return (
     <Wrapper>
-      {/* ... */}
+      <Calendar
+        showNeighboringMonth={false}
+        value={new Date()}
+        tileClassName={({ date }) => {
+          const color = getColorByDate(date);
+          return color ? `reserved-${color}` : null;
+        }}
+      />
+
+      <Separator />
+
       <ReservationList>
         {reservations.map((res, i) => (
           <ReservationItem key={i}>
             <LeftBlock>
-              <RoomImage src={res.imageUrl} alt="Room" /> {/* Usar imageUrl */}
+            <RoomImage src={res.imageUrl} alt="Room" />
               <GuestInfo>
-                <strong>{res.room}</strong>
+                <strong>{res.room}</strong>                
                 <OwnerBlock>
                   <OwnerAvatar src={res.avatar} alt="Owner" />
                   <div>
@@ -169,7 +179,6 @@ export default function MiniCalendar() {
           </ReservationItem>
         ))}
       </ReservationList>
-
       <ViewMoreContainer>
         <ViewMoreText>View More</ViewMoreText>
       </ViewMoreContainer>
