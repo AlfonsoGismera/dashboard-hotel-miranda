@@ -11,14 +11,21 @@ const Bar = styled.header`
   padding: 0.75rem 1rem;
   background: ${({ theme }) => theme.primary};
   color: ${({ theme }) => theme.text};
+  @media(max-width: 768px) {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
 `;
-const LeftGroup = styled.div` display: flex; align-items: center; gap: 1rem; `;
+const Group = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
 const Title = styled.h2`
   font-size: 1.25rem;
-  color: ${({ theme }) => theme.text};
   margin: 0;
+  @media(max-width: 480px) { font-size: 1rem; }
 `;
-const RightGroup = styled.div` display: flex; align-items: center; gap: 1rem; `;
 const IconButton = styled.div`
   position: relative;
   padding: 0.5rem;
@@ -43,10 +50,14 @@ const Avatar = styled.img`
   height: 32px;
   border-radius: 50%;
   cursor: pointer;
-  object-fit: cover;
   background: #555;
+  @media(max-width: 480px) { width: 28px; height: 28px; }
 `;
-const Control = styled.div` display: flex; align-items: center; gap: 0.5rem; `;
+const Control = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`;
 const Select = styled.select`
   background: transparent;
   border: none;
@@ -57,38 +68,33 @@ const Select = styled.select`
 export default function Header() {
   const { t, lang, setLang } = useContext(LanguageContext);
   const { mode, toggleTheme } = useContext(ThemeContext);
-
   return (
     <Bar>
-      <LeftGroup>
+      <Group>
         <IconButton className="active"><Menu size={20} /></IconButton>
         <Title>{t.pageTitle}</Title>
-      </LeftGroup>
-
-      <RightGroup>
+      </Group>
+      <Group>
         <IconButton><Search size={20} /></IconButton>
         <IconButton className="active"><Heart size={20} /></IconButton>
         <IconButton>
-          <Mail size={20} />
-          <Badge bg="#FFA500">3</Badge>
+          <Mail size={20} /><Badge bg="#FFA500">3</Badge>
         </IconButton>
         <IconButton>
-          <Bell size={20} />
-          <Badge bg="#FFA500">5</Badge>
+          <Bell size={20} /><Badge bg="#FFA500">5</Badge>
         </IconButton>
         <IconButton>
-          <MessageSquare size={20} />
-          <Badge bg="#FFA500">!</Badge>
+          <MessageSquare size={20} /><Badge bg="#FFA500">!</Badge>
         </IconButton>
-        <Avatar src="https://unsplash.com/es/fotos/una-ventana-con-un-marco-amarillo-pHwjuH2at-0" alt="User" />
+        <Avatar src="https://source.unsplash.com/random/80x80?face" />
         <Control>
-          <button onClick={toggleTheme}>{mode === 'light' ? '🌙' : '☀️'}</button>
-          <Select value={lang} onChange={e => setLang(e.target.value)}>
+          <button onClick={toggleTheme}>{mode==='light'?'🌙':'☀️'}</button>
+          <Select value={lang} onChange={e=>setLang(e.target.value)}>
             <option value="en">EN</option>
             <option value="es">ES</option>
           </Select>
         </Control>
-      </RightGroup>
+      </Group>
     </Bar>
   );
 }
