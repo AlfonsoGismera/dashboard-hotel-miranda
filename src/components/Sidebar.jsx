@@ -3,6 +3,12 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { LanguageContext } from '../context/LanguageContext';
 import { useContext } from 'react';
+import { IoMdKey } from "react-icons/io";
+import { LuCalendarCheck2 } from "react-icons/lu";
+import { IoPeopleOutline } from "react-icons/io5";
+import { HiOutlinePuzzlePiece } from "react-icons/hi2";
+import { TbPuzzle2 } from "react-icons/tb";
+import { FaHotel } from "react-icons/fa6";
 
 const Sider = styled.nav`
   width: 200px;
@@ -23,11 +29,20 @@ export default function Sidebar() {
   const { t } = useContext(LanguageContext);
   return (
     <Sider>
-      <Link to="/">Dashboard</Link>
-      <Link to="/rooms">{t.rooms}</Link>
-      <Link to="/bookings">{t.bookings}</Link>
-      <Link to="/users">{t.users}</Link>
-      <Link to="/contact">{t.contact}</Link>
+      <div className='hotel_logo'>
+        <FaHotel className='hotel_icon' />
+        <h1 className='hotel_name'>Travi Hotel</h1>
+      </div>
+      <Link to="/"><TbPuzzle2 /> Dashboard</Link>
+      <Link to="/rooms"><IoMdKey /> {t.rooms}</Link>
+      <Link to="/bookings"><LuCalendarCheck2 /> {t.bookings}</Link>
+      <Link to="/users"><IoPeopleOutline /> {t.users}</Link>
+      <Link to="/contact"><HiOutlinePuzzlePiece /> {t.contact}</Link>
+      <div>
+        <h2>Travi hotel Admin Dashboard</h2>
+        <p>Version 1.0.0</p>
+        <p>© 2025 Travi hotel. All rights reserved.</p>
+      </div>
     </Sider>
   );
 }

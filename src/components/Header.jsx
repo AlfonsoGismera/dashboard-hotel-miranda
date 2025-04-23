@@ -1,7 +1,7 @@
 // src/components/Header.jsx
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { Menu, Heart, Mail, Bell, MessageSquare } from 'lucide-react';
+import { Menu, Heart, Mail, Bell, MessageSquare,Search } from 'lucide-react';
 import { LanguageContext } from '../context/LanguageContext';
 import { ThemeContext } from '../context/ThemeContext';
 
@@ -30,6 +30,16 @@ const RightGroup = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
+`;
+const SearchContainer = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+`;
+const SearchIcon = styled.div`
+  position: absolute;
+  right: 0.75rem;
+  color: ${({ theme }) => theme.subtitle};
 `;
 
 const SearchInput = styled.input`
@@ -88,6 +98,7 @@ const Select = styled.select`
   border: none;
   color: ${({ theme }) => theme.text};  
   cursor: pointer;
+  color
   option {
     color: #000000;                    
   }
@@ -103,16 +114,21 @@ export default function Header() {
   return (
     <Bar>
       <LeftGroup>
-        <IconButton className="active"><Menu size={20} /></IconButton>
+        <IconButton className="active"><Menu size={30} /></IconButton>
         <Title>Dashboard</Title>
       </LeftGroup>
 
       <RightGroup>
         {/* no funcional */}
-        <SearchInput
-          type="text"
-          placeholder={t.searchPlaceholder || 'Search...'}
-        />
+        <SearchContainer>
+          <SearchIcon>
+            <Search size={20} />
+          </SearchIcon>
+          <SearchInput
+            type="text"
+            placeholder={t.searchPlaceholder || 'Search...'}
+          />
+        </SearchContainer>
 
         <IconButton className="active"><Heart size={20} /></IconButton>
 
@@ -144,7 +160,7 @@ export default function Header() {
           <Select value={lang} onChange={e => setLang(e.target.value)}>
             <option value="en">EN</option>
             <option value="es">ES</option>
-          
+
           </Select>
         </Control>
       </RightGroup>
