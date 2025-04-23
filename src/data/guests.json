@@ -31,7 +31,7 @@
       "checkOut": "2025-11-27T11:00:00Z",
       "specialRequest": "Baby crib required.",
       "roomType": "Deluxe A - 04",
-      "status": "In Progress",
+      "status": "Pending",
       "email": "olivia.brownlee@example.com",
       "phone": "+1-202-555-0122"
     },
@@ -103,7 +103,7 @@
       "checkOut": "2025-12-03T11:00:00Z",
       "specialRequest": "Extra towels.",
       "roomType": "Suite B - 300",
-      "status": "In Progress",
+      "status": "Pending",
       "email": "michael.chan@example.com",
       "phone": "+1-202-555-0133"
     },

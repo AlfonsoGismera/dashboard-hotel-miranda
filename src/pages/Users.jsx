@@ -91,7 +91,7 @@ export default function Guests() {
     const statusColors = {
         'Checked In': 'green',
         'Checked Out': 'red',
-        'Pending': '#f0ad4e',
+        'Pending': '#b2f31d',
         'Booked': '#0275d8',
         'Cancelled': '#d9534f',
     };
