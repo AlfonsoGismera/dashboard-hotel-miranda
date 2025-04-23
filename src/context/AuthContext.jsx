@@ -5,34 +5,31 @@ export const AuthContext = createContext();
 const STORAGE_KEY = 'hotelMirandaAuth';
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    // 1) Lee siempre lo que haya en localStorage
+  // 1) Inicializa directamente el estado desde localStorage
+  const [user, setUser] = useState(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored) {
-      setUser(JSON.parse(stored));
-    } else {
-      // 2) Si no hay nada, auto‑login siempre (ideal para DEV)
-      const devUser = { name: 'DevAdmin' };
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(devUser));
-      setUser(devUser);
-    }
-  }, []);
+    return stored ? JSON.parse(stored) : null;
+  });
 
-  function login(username, password) {
+  // 2) Cuando cambie user, lo guardamos/limpiamos en localStorage
+  useEffect(() => {
+    if (user) localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
+    else localStorage.removeItem(STORAGE_KEY);
+  }, [user]);
+
+  function login(username, password, remember = true) {
     if (username === 'admin' && password === 'admin') {
       const u = { name: 'Admin' };
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(u));
       setUser(u);
+      if (!remember) localStorage.removeItem(STORAGE_KEY);
       return true;
     }
     return false;
   }
 
   function logout() {
-    localStorage.removeItem(STORAGE_KEY);
     setUser(null);
+
   }
 
   return (

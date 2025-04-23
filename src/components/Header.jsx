@@ -32,7 +32,6 @@ const RightGroup = styled.div`
   gap: 1rem;
 `;
 
-// Nuevo componente para el input de búsqueda
 const SearchInput = styled.input`
   padding: 0.4rem 0.75rem;
   border-radius: 0.5rem;
