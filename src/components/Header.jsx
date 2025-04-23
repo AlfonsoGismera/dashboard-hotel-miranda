@@ -114,7 +114,7 @@ export default function Header() {
   return (
     <Bar>
       <LeftGroup>
-        <IconButton className="active"><Menu size={30} /></IconButton>
+        <IconButton className="active"><Menu size={25} /></IconButton>
         <Title>Dashboard</Title>
       </LeftGroup>
 
