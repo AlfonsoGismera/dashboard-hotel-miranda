@@ -146,11 +146,11 @@ export default function Sidebar() {
           </TextColumn>
         </Header>
         <Links>
-          <LinkItem to="/">Dashboard</LinkItem>
-          <LinkItem to="/rooms">{t.rooms}</LinkItem>
-          <LinkItem to="/bookings">{t.bookings}</LinkItem>
-          <LinkItem to="/users">{t.users}</LinkItem>
-          <LinkItem to="/contact">{t.contact}</LinkItem>
+          <LinkItem to="/"><TbPuzzle2 /> Dashboard</LinkItem>
+          <LinkItem to="/rooms"><IoMdKey /> {t.rooms}</LinkItem>
+          <LinkItem to="/bookings"><LuCalendarCheck2 /> {t.bookings}</LinkItem>
+          <LinkItem to="/users"><IoPeopleOutline /> {t.users}</LinkItem>
+          <LinkItem to="/contact"><HiOutlinePuzzlePiece /> {t.contact}</LinkItem>
         </Links>
       </div>
       <Footer>
