@@ -9,7 +9,8 @@
     "roomType": "Deluxe A - 02",
     "status": "Checked In",
     "email": "cathyadi.purnomo@example.com",
-    "phone": "+1-202-555-0134"
+    "phone": "+1-202-555-0134",
+    "image": "https://randomuser.me/api/portraits/women/1.jpg"
   },
   {
     "guest": "Angela Smith",
@@ -21,7 +22,8 @@
     "roomType": "Deluxe A - 03",
     "status": "Booked",
     "email": "angela.smith@example.com",
-    "phone": "+1-202-555-0178"
+    "phone": "+1-202-555-0178",
+    "image": "https://randomuser.me/api/portraits/men/2.jpg"
   },
   {
     "guest": "Olivia Brownlee",
@@ -33,7 +35,8 @@
     "roomType": "Deluxe A - 04",
     "status": "Pending",
     "email": "olivia.brownlee@example.com",
-    "phone": "+1-202-555-0122"
+    "phone": "+1-202-555-0122",
+    "image": "https://randomuser.me/api/portraits/women/3.jpg"
   },
   {
     "guest": "Hendric Suratman",
@@ -45,7 +48,8 @@
     "roomType": "Suite B - 224",
     "status": "Cancelled",
     "email": "hendric.suratman@example.com",
-    "phone": "+1-202-555-0199"
+    "phone": "+1-202-555-0199",
+    "image": "https://randomuser.me/api/portraits/men/4.jpg"
   },
   {
     "guest": "Jiajing Lawrence",
@@ -57,7 +61,8 @@
     "roomType": "Club C - 412",
     "status": "Refunded",
     "email": "jiajing.lawrence@example.com",
-    "phone": "+1-202-555-0147"
+    "phone": "+1-202-555-0147",
+    "image": "https://randomuser.me/api/portraits/women/5.jpg"
   },
   {
     "guest": "Kevin Stuart",
@@ -69,7 +74,8 @@
     "roomType": "Club C - 219",
     "status": "Pending",
     "email": "kevin.stuart@example.com",
-    "phone": "+1-202-555-0163"
+    "phone": "+1-202-555-0163",
+    "image": "https://randomuser.me/api/portraits/men/6.jpg"
   },
   {
     "guest": "Steven O’Connor",
@@ -81,7 +87,8 @@
     "roomType": "Suite D - 972",
     "status": "Checked Out",
     "email": "steven.oconnor@example.com",
-    "phone": "+1-202-555-0188"
+    "phone": "+1-202-555-0188",
+    "image": "https://randomuser.me/api/portraits/men/7.jpg"
   },
   {
     "guest": "Samantha Lee",
@@ -93,7 +100,8 @@
     "roomType": "Deluxe A - 05",
     "status": "Booked",
     "email": "samantha.lee@example.com",
-    "phone": "+1-202-555-0111"
+    "phone": "+1-202-555-0111",
+    "image": "https://randomuser.me/api/portraits/women/8.jpg"
   },
   {
     "guest": "Michael Chan",
@@ -105,7 +113,8 @@
     "roomType": "Suite B - 300",
     "status": "Pending",
     "email": "michael.chan@example.com",
-    "phone": "+1-202-555-0133"
+    "phone": "+1-202-555-0133",
+    "image": "https://randomuser.me/api/portraits/men/9.jpg"
   },
   {
     "guest": "Laura Kim",
@@ -117,7 +126,8 @@
     "roomType": "Club C - 500",
     "status": "Pending",
     "email": "laura.kim@example.com",
-    "phone": "+1-202-555-0155"
+    "phone": "+1-202-555-0155",
+    "image": "https://randomuser.me/api/portraits/women/10.jpg"
   },
   {
     "guest": "David Nguyen",
@@ -129,8 +139,7 @@
     "roomType": "Club C - 501",
     "status": "Checked In",
     "email": "david.nguyen@example.com",
-    "phone": "+1-202-555-0177"
+    "phone": "+1-202-555-0177",
+    "image": "https://randomuser.me/api/portraits/men/11.jpg"
   }
 ]
-
-
