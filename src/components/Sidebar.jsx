@@ -48,15 +48,17 @@ const TextColumn = styled.div`
   flex-direction: column;
   margin-left: 0.75rem;
 `;
-
 const HotelName = styled.h1`
   font-size: 1.25rem;
   color: ${({ theme }) => theme.text};
   margin: 0;
 `;
-
 const Subtitle = styled.div`
   font-size: 0.75rem;
+  color: ${({ theme }) => theme.subtitle};
+`;
+const SubtitleSmall = styled.div`
+  font-size: 0.7rem;
   color: ${({ theme }) => theme.subtitle};
 `;
 
@@ -67,7 +69,6 @@ const Links = styled.div`
   gap: 1.5rem;
   padding: 0 1rem;
 `;
-
 const LinkItem = styled(NavLink)`
   display: flex;
   align-items: center;
@@ -82,59 +83,74 @@ const LinkItem = styled(NavLink)`
   }
 `;
 
+// --- footer ---
 const Footer = styled.div`
-  background: ${({ theme }) => theme.cardBg};
   padding: 1rem;
-  text-align: center;
 `;
 
 const FooterCard = styled.div`
-  background-image: url('https://plus.unsplash.com/premium_photo-1669077046750-bef49171b059?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGV0cmElMjBoJTIwbG9nb3xlbnwwfHwwfHx8MA%3D%3D');
-  background-size: cover;
-  background-position: center;
-  height: 40px;
-  width: 40px;
+  background: ${({ theme }) => theme.cardBg};
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   border-radius: 0.5rem;
-  margin: 0 auto;
-  margin-bottom: 0.5rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 6rem;
 `;
-
+const FooterAvatar = styled.img`
+  width: 64px;
+  height: 64px;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  margin-top: -2rem;
+`;
 const FooterName = styled.div`
-  font-size: 0.7rem;
+  font-size: 1rem;
   color: ${({ theme }) => theme.text};
-  margin-bottom: 0.5rem;
+  font-weight: bold;
 `;
-
+const FooterEmail = styled.div`
+  font-size: 0.75rem;
+  color: ${({ theme }) => theme.subtitle};
+`;
 const ContactButton = styled.button`
-  background: #EBF1EF;
+  background: #ffffff;
   color: #135846;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   cursor: pointer;
-  &:hover {
-    background: #CDE6E0;
-  }
+  font-size: 0.875rem;
+  &:hover { background: #CDE6E0; }
   ${({ theme }) => theme.mode === 'dark' && `
     background: #135846;
     color: #EBF1EF;
     &:hover { background: #0f3d33; }
   `}
 `;
-
+const HotelFooter = styled.div`
+  font-size: 0.8rem;
+  color: ${({ theme }) => theme.text};
+  text-align: center;
+  margin-top: 0.5rem;
+`;
 const FooterLegal = styled.div`
   font-size: 0.6rem;
   color: ${({ theme }) => theme.subtitle};
-  margin-top: 0.5rem;
+  text-align: center;
+  margin-top: 0.25rem;
 `;
 
 export default function Sidebar() {
   const { t } = useContext(LanguageContext);
-  const { logout } = useContext(AuthContext);
+  const { logout, user } = useContext(AuthContext);
 
   return (
     <Sider>
-       <div>
+      <div>
         <Header>
           <IconColumn>
             <StarsIcon />
@@ -142,24 +158,27 @@ export default function Sidebar() {
           </IconColumn>
           <TextColumn>
             <HotelName>Travl</HotelName>
-            <Subtitle>{t.hotelSubtitle || 'Hotel admin dashboard'}</Subtitle>
+            <Subtitle>{t.hotelSubtitle}</Subtitle>
           </TextColumn>
         </Header>
         <Links>
-          <LinkItem to="/"><TbPuzzle2 /> Dashboard</LinkItem>
-          <LinkItem to="/rooms"><IoMdKey /> {t.rooms}</LinkItem>
-          <LinkItem to="/bookings"><LuCalendarCheck2 /> {t.bookings}</LinkItem>
-          <LinkItem to="/users"><IoPeopleOutline /> {t.users}</LinkItem>
-          <LinkItem to="/employee"><HiOutlinePuzzlePiece /> {t.contact}</LinkItem>
+          <LinkItem to="/"> <TbPuzzle2 /> {t.dashboard}</LinkItem>
+          <LinkItem to="/rooms"> <IoMdKey /> {t.rooms}</LinkItem>
+          <LinkItem to="/bookings"> <LuCalendarCheck2 /> {t.bookings}</LinkItem>
+          <LinkItem to="/users"> <IoPeopleOutline /> {t.users}</LinkItem>
+          <LinkItem to="/employee"> <HiOutlinePuzzlePiece /> {t.contact}</LinkItem>
         </Links>
       </div>
+
       <Footer>
-        <FooterCard />
-        <FooterName>{t.hotelName}</FooterName>
-        <ContactButton onClick={logout}>
-          {t.logout || 'Logout'}
-        </ContactButton>
-        <FooterLegal>© 2025 Travl All rights reserved.</FooterLegal>
+        <FooterCard>
+          <FooterAvatar src='https://randomuser.me/api/portraits/women/10.jpg' alt={user.name} />
+          <FooterName>Johana Martín</FooterName>
+          <FooterEmail>{user.email || 'Johana_Martin@mail.com'}</FooterEmail>
+          <ContactButton onClick={logout}>{t.logout || 'Logout'}</ContactButton>
+        </FooterCard>
+        <HotelFooter>{t.hotelName}</HotelFooter>
+        <FooterLegal>© 2025 Travl All Rights Reserved</FooterLegal>
       </Footer>
     </Sider>
   );

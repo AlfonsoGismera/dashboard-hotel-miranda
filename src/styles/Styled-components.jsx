@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body, html {
+  body, html, #root {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -15,10 +15,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
   }
 
-  #root {
-    width: 100%;
-    height: 100%;
-  }
+
   .react-calendar {
     width: 100%;
     background: ${({ theme }) => theme.cardBg};
