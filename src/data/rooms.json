@@ -1,0 +1,98 @@
+[
+    {
+      "roomId": "RM101",
+      "roomNumber": 101,
+      "bedType": "Single Bed",
+      "photos": [
+        "https://images.unsplash.com/photo-1582719478230-2e3de9badd29",
+        "https://images.unsplash.com/photo-1576671082144-9310f4758191",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+      ],
+      "description": "Habitación individual cómoda con escritorio y vistas al jardín.",
+      "rate": 70.00,
+      "discount": 10,
+      "offerPrice": 63.00,
+      "offer": "YES",
+      "cancellation": "Cancelación gratuita hasta 24 horas antes del check-in.",
+      "facilities": ["TV", "WIFI", "air conditioning"],
+      "status": "Available"
+    },
+    {
+      "roomId": "RM202",
+      "roomNumber": 202,
+      "bedType": "Double Bed",
+      "photos": [
+        "https://images.unsplash.com/photo-1501117716987-c8e58df61eb9",
+        "https://images.unsplash.com/photo-1560347876-aeef00ee58a1",
+        "https://images.unsplash.com/photo-1582719478140-1f2a6e7c164e",
+        "https://images.unsplash.com/photo-1582719478215-2b8e1d7a81fa"
+      ],
+      "description": "Habitación doble con cama matrimonial y balcón privado.",
+      "rate": 95.00,
+      "discount": 0,
+      "offerPrice": 95.00,
+      "offer": "NO",
+      "cancellation": "Cancelación con cargo del 50% si se realiza en las 48h previas.",
+      "facilities": ["TV", "WIFI", "air conditioning", "Jacuzzi"],
+      "status": "Booked"
+    },
+    {
+      "roomId": "RM303",
+      "roomNumber": 303,
+      "bedType": "Luxury Bed",
+      "photos": [
+        "https://images.unsplash.com/photo-1582719478300-3f1f5adc2c6b",
+        "https://images.unsplash.com/photo-1560347877-2a8c0a8f628a",
+        "https://images.unsplash.com/photo-1600585154412-1b9cb4c16f76",
+        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
+        "https://images.unsplash.com/photo-1600585154504-7f83b03b3868"
+      ],
+      "description": "Suite de lujo con cama king, sala de estar y minibar.",
+      "rate": 180.00,
+      "discount": 15,
+      "offerPrice": 153.00,
+      "offer": "YES",
+      "cancellation": "Cancelación gratuita hasta 48 horas antes del check-in.",
+      "facilities": ["TV", "WIFI", "air conditioning", "Jacuzzi"],
+      "status": "Available"
+    },
+    {
+      "roomId": "RM404",
+      "roomNumber": 404,
+      "bedType": "Double Bed",
+      "photos": [
+        "https://images.unsplash.com/photo-1582719478233-7d2a1e6c196b",
+        "https://images.unsplash.com/photo-1560347876-bcf83a25fed7",
+        "https://images.unsplash.com/photo-1600585154425-2e7c3f5f2b77"
+      ],
+      "description": "Habitación doble clásica con decoración elegante.",
+      "rate": 85.00,
+      "discount": 5,
+      "offerPrice": 80.75,
+      "offer": "YES",
+      "cancellation": "Cancelación gratuita hasta 24 horas antes del check-in.",
+      "facilities": ["TV", "WIFI", "air conditioning"],
+      "status": "Booked"
+    },
+    {
+      "roomId": "RM505",
+      "roomNumber": 505,
+      "bedType": "Luxury Bed",
+      "photos": [
+        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2",
+        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+        "https://images.unsplash.com/photo-1582719478215-2b8e1d7a81fa",
+        "https://images.unsplash.com/photo-1576671082144-9310f4758191"
+      ],
+      "description": "Penthouse con cama king, jacuzzi y vistas panorámicas.",
+      "rate": 220.00,
+      "discount": 20,
+      "offerPrice": 176.00,
+      "offer": "YES",
+      "cancellation": "Cancelación gratuita hasta 72 horas antes del check-in.",
+      "facilities": ["TV", "WIFI", "air conditioning", "Jacuzzi"],
+      "status": "Available"
+    }
+  ]
+  
+  

@@ -9,7 +9,7 @@ export const lightTheme = {
     barPrimary: '#135846',         
     barSecondary: '#E23428'       
   },
-  iconActive: '#E23428',          
+  iconActive: '#434dbf',          
 };
 export const darkTheme = {
   background: '#202020',
@@ -22,5 +22,5 @@ export const darkTheme = {
     barPrimary: '#135846',
     barSecondary: '#E23428'
   },
-  iconActive: '#E23428',
+  iconActive: '#5AD07A',
 };

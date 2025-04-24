@@ -117,8 +117,11 @@ export default function Guests(){
           <tbody>
             {paged.map((r,i)=>(<tr key={i}>
               <Td style={{display:'flex',alignItems:'center',gap:'0.5rem'}}>
-                <img src={r.image} alt={r.guest} style={{width:40,height:40,borderRadius:'50%',objectFit:'cover'}}/>
-                <div><strong>{r.guest}</strong><br/><small>{r.reservationId}</small></div>
+              <Link to={`/users/${r.reservationId}`}>
+                <img src={r.image} alt={r.guest} style={{width:40,height:40,borderRadius:'10%',objectFit:'cover'}}/>
+                </Link>
+                <div><strong>{r.guest}</strong><br/><small>{r.reservationId}</small>
+                </div>
               </Td>
               <Td>{format(new Date(r.orderDate),'MMM do yyyy',{locale})}<br/><small>{format(new Date(r.orderDate),'hh:mm a',{locale})}</small></Td>
               <Td>{format(new Date(r.checkIn),'MMM do yyyy',{locale})}<br/><small>{format(new Date(r.checkIn),'hh:mm a',{locale})}</small></Td>
