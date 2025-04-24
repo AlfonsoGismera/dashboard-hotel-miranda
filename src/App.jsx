@@ -10,7 +10,7 @@ import Rooms from './pages/Rooms';
 import RoomDetail from './pages/RoomDetail';
 import Users from './pages/Users';
 import UserDetail from './pages/UserDetail';
-import Contact from './pages/Contact';
+import Employee from './pages/Employee';
 import 'react-calendar/dist/Calendar.css';
 
 
@@ -31,7 +31,7 @@ export default function App() {
         <Route path="/rooms/:id" element={<PrivateRoute><Layout><RoomDetail /></Layout></PrivateRoute>} />
         <Route path="/users" element={<PrivateRoute><Layout><Users /></Layout></PrivateRoute>} />
         <Route path="/users/:id" element={<PrivateRoute><Layout><UserDetail /></Layout></PrivateRoute>} />
-        <Route path="/contact" element={<PrivateRoute><Layout><Contact /></Layout></PrivateRoute>} />
+        <Route path="/employee" element={<PrivateRoute><Layout><Employee /></Layout></PrivateRoute>} />
       </Routes>
     </BrowserRouter>
   );
