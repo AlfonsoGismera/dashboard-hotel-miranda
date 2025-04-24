@@ -14,12 +14,14 @@ const Page = styled.div`
   display: flex;
   gap: 2rem;
   padding: 1rem;
+  
 `;
 const Left = styled.div`
   flex: 1;
   background: ${({ theme }) => theme.cardBg};
   padding: 1rem;
   border-radius: 0.5rem;
+  
 `;
 const Right = styled.div`
   flex: 1;
@@ -32,7 +34,6 @@ const Right = styled.div`
 const Avatar = styled.img`
   width: 80px; height: 80px;
   border-radius: 0.5rem;
-  background: #ccc;
   object-fit: cover;
 `;
 const Name = styled.h2`margin: .5rem 0;`;
@@ -41,8 +42,8 @@ const Row = styled.div`margin: .75rem 0;`;
 const Label = styled.span`font-weight: bold;`;
 const Facilities = styled.div`display:flex; flex-wrap:wrap; gap: .5rem; margin-top:.5rem;`;
 const Facility = styled.span`
-  background: ${({ theme }) => theme.primary}20;
-  color: ${({ theme }) => theme.primary};
+  background: ${({ theme }) => theme.primary}80;
+  color: ${({ theme }) => theme.text};
   padding: 0.7rem 1.5rem;
   border-radius: .25rem;
   font-size: .8rem;
@@ -67,8 +68,8 @@ const Slide = styled.div`
   background-position: center;
 `;
 const Arrow = styled.div`
-  position: absolute; top:50%; transform: translateY(-50%);
-  padding: .5rem; background: ${({ theme }) => theme.primary}aa; border-radius: 50%;
+  position: absolute; top:80%; transform: translateY(-50%);
+  padding: 0.5rem; background: ${({ theme }) => theme.primary}aa; border-radius: 10%;
   cursor: pointer; color: #fff;
   ${({ $left }) => $left ? 'left:1rem' : 'right:1rem'};
   &:hover { background: ${({ theme }) => theme.primary}; }
@@ -186,8 +187,9 @@ export default function UserDetail() {
                 </Arrow>
 
                 <div style={{
-                    position: 'absolute', bottom: '1rem', left: '1rem', color: '#fff',
-                    background: '#00000080', padding: '.5rem', borderRadius: '.25rem'
+                    position: 'absolute', bottom: '0rem', left: '0rem', color: '#fff',
+                    background: '#00000080', padding: '.5rem', borderRadius: '.25rem',
+                     width: '100%',
                 }}>
                     <div>{room.bedType}</div>
                     <div style={{ fontSize: '.8rem', marginTop: '.5rem' }}>{room.description}</div>
