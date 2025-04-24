@@ -1,8 +1,8 @@
-// src/components/Sidebar.jsx
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { LanguageContext } from '../context/LanguageContext';
+import { AuthContext } from '../context/AuthContext';
 import { FaHotel } from 'react-icons/fa6';
 import { GiStarsStack } from 'react-icons/gi';
 import { TbPuzzle2 } from 'react-icons/tb';
@@ -105,7 +105,6 @@ const FooterName = styled.div`
   margin-bottom: 0.5rem;
 `;
 
-
 const ContactButton = styled.button`
   background: #EBF1EF;
   color: #135846;
@@ -131,6 +130,7 @@ const FooterLegal = styled.div`
 
 export default function Sidebar() {
   const { t } = useContext(LanguageContext);
+  const { logout } = useContext(AuthContext);
 
   return (
     <Sider>
@@ -156,7 +156,9 @@ export default function Sidebar() {
       <Footer>
         <FooterCard />
         <FooterName>{t.hotelName}</FooterName>
-        <ContactButton>{t.contactUs || 'Contact Us'}</ContactButton>
+        <ContactButton onClick={logout}>
+          {t.logout || 'Logout'}
+        </ContactButton>
         <FooterLegal>© 2025 Travl All rights reserved.</FooterLegal>
       </Footer>
     </Sider>
