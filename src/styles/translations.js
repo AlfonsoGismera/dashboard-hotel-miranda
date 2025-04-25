@@ -72,6 +72,14 @@ const translations = {
     status: "Estado",
     active: "Activo",
     inactive: "Inactivo",
+    name:           'Name',           
+    jobDesk:        'Job',            
+    schedule:       'Schedule',        
+    viewSchedule:   'View Schedule',   
+    contact:        'Contact',         
+    status:         'Status',          
+    active:         'Active',         
+    inactive:       'Inactive',       
   },
 
   es: {
@@ -151,6 +159,14 @@ const translations = {
     status: "Estado",
     active: "Activo",
     inactive: "Inactivo",
+    name:           'Nombre',          
+    jobDesk:        'Trabajo',       
+    schedule:       'Horario',         
+    viewSchedule:   'Ver Horario',     
+    contact:        'Contacto',        
+    status:         'Estado',         
+    active:         'Activo',          
+    inactive:       'Inactivo', 
   },
 };
 
