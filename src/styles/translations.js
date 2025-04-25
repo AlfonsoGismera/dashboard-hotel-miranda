@@ -62,6 +62,16 @@ const translations = {
     offerPrice: "Offer Price",
     cancellation: "Cancellation Policy",
     photos: "Photos",
+    // Employee page
+    employeesPageTitle: "Todos los Empleados",
+    employee: "Empleado",
+    employeeId: "ID Empleado",
+    jobDesk: "Puesto",
+    schedule: "Horario",
+    contact: "Contacto",
+    status: "Estado",
+    active: "Activo",
+    inactive: "Inactivo",
   },
 
   es: {
@@ -131,6 +141,16 @@ const translations = {
     signIn: "Iniciar sesión",
     invalidCredentials: "Credenciales inválidas",
     logout: "Cerrar sesión",
+    // Pagina de Empleado
+    employeesPageTitle: "Todos los Empleados",
+    employee: "Empleado",
+    employeeId: "ID Empleado",
+    jobDesk: "Puesto",
+    schedule: "Horario",
+    contact: "Contacto",
+    status: "Estado",
+    active: "Activo",
+    inactive: "Inactivo",
   },
 };
 
