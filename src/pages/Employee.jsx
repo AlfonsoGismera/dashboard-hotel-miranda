@@ -90,15 +90,12 @@ export default function Employees() {
                         </Tab>
                     ))}
                 </Tabs>
-                <EntriesInfo>
-                    {t.entriesInfo.replace('{start}', start).replace('{end}', end).replace('{total}', total)}
-                </EntriesInfo>
             </Header>
             <TableWrapper>
                 <Table>
                     <thead>
                         <tr>
-                            {['name',  'jobDesk', 'schedule', 'contact', 'status'].map(field => (
+                            {['name', 'jobDesk', 'schedule', 'contact', 'status'].map(field => (
                                 <Th key={field} onClick={() => headerClick(field)}>
                                     {t[field] || field}
                                     {sortField === field && (
@@ -122,9 +119,9 @@ export default function Employees() {
                                 </NameCell>
                                 <Td>{e.jobDesk}</Td>
                                 <Td>
-                                {e.schedule.join(', ')}
+                                    {e.schedule.join(', ')}
                                     <div style={{ color: 'green', fontSize: '0.8rem', marginBottom: '4px' }}>View Schedule</div>
-  
+
                                 </Td>
                                 <Td>
                                     <FaPhoneAlt />

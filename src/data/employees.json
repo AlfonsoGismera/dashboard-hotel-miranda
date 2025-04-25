@@ -4,7 +4,10 @@
     "name": "María García",
     "image": "https://randomuser.me/api/portraits/women/21.jpg",
     "jobDesk": "Front Desk Manager",
-    "schedule": ["Mon", "Tue"],
+    "schedule": [
+      "Mon",
+      "Tue"
+    ],
     "hireDate": "2021-06-15",
     "contact": "+34-600-123-456",
     "status": "Active"
@@ -14,7 +17,10 @@
     "name": "Carlos López",
     "image": "https://randomuser.me/api/portraits/men/22.jpg",
     "jobDesk": "Housekeeping Supervisor",
-    "schedule": ["Wed", "Thu"],
+    "schedule": [
+      "Wed",
+      "Thu"
+    ],
     "hireDate": "2020-09-01",
     "contact": "+34-600-234-567",
     "status": "Inactive"
@@ -24,7 +30,10 @@
     "name": "Laura Martínez",
     "image": "https://randomuser.me/api/portraits/women/23.jpg",
     "jobDesk": "Concierge",
-    "schedule": ["Fri", "Sat"],
+    "schedule": [
+      "Fri",
+      "Sat"
+    ],
     "hireDate": "2022-03-12",
     "contact": "+34-600-345-678",
     "status": "Active"
@@ -34,7 +43,10 @@
     "name": "Javier Sánchez",
     "image": "https://randomuser.me/api/portraits/men/24.jpg",
     "jobDesk": "Maintenance Technician",
-    "schedule": ["Mon", "Tue"],
+    "schedule": [
+      "Mon",
+      "Tue"
+    ],
     "hireDate": "2019-11-20",
     "contact": "+34-600-456-789",
     "status": "Active"
@@ -44,7 +56,10 @@
     "name": "Ana Fernández",
     "image": "https://randomuser.me/api/portraits/women/25.jpg",
     "jobDesk": "Housekeeper",
-    "schedule": ["Wed", "Thu"],
+    "schedule": [
+      "Wed",
+      "Thu"
+    ],
     "hireDate": "2021-01-05",
     "contact": "+34-600-567-890",
     "status": "Inactive"
@@ -54,7 +69,10 @@
     "name": "Miguel Ruiz",
     "image": "https://randomuser.me/api/portraits/men/26.jpg",
     "jobDesk": "Bellboy",
-    "schedule": ["Fri", "Sat"],
+    "schedule": [
+      "Fri",
+      "Sat"
+    ],
     "hireDate": "2023-02-10",
     "contact": "+34-600-678-901",
     "status": "Active"
@@ -64,7 +82,10 @@
     "name": "Elena Torres",
     "image": "https://randomuser.me/api/portraits/women/27.jpg",
     "jobDesk": "Receptionist",
-    "schedule": ["Sun", "Mon"],
+    "schedule": [
+      "Sun",
+      "Mon"
+    ],
     "hireDate": "2022-07-01",
     "contact": "+34-600-789-012",
     "status": "Active"
@@ -74,7 +95,10 @@
     "name": "Rubén Díaz",
     "image": "https://randomuser.me/api/portraits/men/28.jpg",
     "jobDesk": "Chef",
-    "schedule": ["Tue", "Wed"],
+    "schedule": [
+      "Tue",
+      "Wed"
+    ],
     "hireDate": "2020-12-15",
     "contact": "+34-600-890-123",
     "status": "Inactive"
@@ -84,7 +108,10 @@
     "name": "Sara Romero",
     "image": "https://randomuser.me/api/portraits/women/29.jpg",
     "jobDesk": "Sous Chef",
-    "schedule": ["Thu", "Fri"],
+    "schedule": [
+      "Thu",
+      "Fri"
+    ],
     "hireDate": "2021-05-20",
     "contact": "+34-600-901-234",
     "status": "Active"
@@ -94,7 +121,10 @@
     "name": "Diego Moreno",
     "image": "https://randomuser.me/api/portraits/men/30.jpg",
     "jobDesk": "Waiter",
-    "schedule": ["Sat", "Sun"],
+    "schedule": [
+      "Sat",
+      "Sun"
+    ],
     "hireDate": "2022-10-10",
     "contact": "+34-600-012-345",
     "status": "Active"
@@ -104,7 +134,10 @@
     "name": "Carolina Ruiz",
     "image": "https://randomuser.me/api/portraits/women/31.jpg",
     "jobDesk": "Bartender",
-    "schedule": ["Mon", "Tue"],
+    "schedule": [
+      "Mon",
+      "Tue"
+    ],
     "hireDate": "2018-08-30",
     "contact": "+34-600-123-987",
     "status": "Inactive"
@@ -114,9 +147,51 @@
     "name": "Luis Pérez",
     "image": "https://randomuser.me/api/portraits/men/32.jpg",
     "jobDesk": "Security Guard",
-    "schedule": ["Wed", "Thu"],
+    "schedule": [
+      "Wed",
+      "Thu"
+    ],
     "hireDate": "2019-04-15",
     "contact": "+34-600-234-876",
+    "status": "Active"
+  },
+  {
+    "employeeId": "EMP013",
+    "name": "Sofía Gómez",
+    "image": "https://randomuser.me/api/portraits/women/33.jpg",
+    "jobDesk": "Front Desk Manager",
+    "schedule": [
+      "Fri",
+      "Sat"
+    ],
+    "hireDate": "2023-01-20",
+    "contact": "+34-600-345-789",
+    "status": "Active"
+  },
+  {
+    "employeeId": "EMP014",
+    "name": "Pablo Vargas",
+    "image": "https://randomuser.me/api/portraits/men/34.jpg",
+    "jobDesk": "Housekeeper",
+    "schedule": [
+      "Sun",
+      "Mon"
+    ],
+    "hireDate": "2022-05-01",
+    "contact": "+34-600-456-890",
+    "status": "Active"
+  },
+  {
+    "employeeId": "EMP015",
+    "name": "Isabel Jiménez",
+    "image": "https://randomuser.me/api/portraits/women/35.jpg",
+    "jobDesk": "Waiter",
+    "schedule": [
+      "Tue",
+      "Wed"
+    ],
+    "hireDate": "2024-03-10",
+    "contact": "+34-600-567-901",
     "status": "Active"
   }
 ]
