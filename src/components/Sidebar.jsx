@@ -166,7 +166,7 @@ export default function Sidebar() {
           <LinkItem to="/rooms"> <IoMdKey /> {t.rooms}</LinkItem>
           <LinkItem to="/bookings"> <LuCalendarCheck2 /> {t.bookings}</LinkItem>
           <LinkItem to="/users"> <IoPeopleOutline /> {t.users}</LinkItem>
-          <LinkItem to="/employee"> <HiOutlinePuzzlePiece /> {t.contact}</LinkItem>
+          <LinkItem to="/employee"> <HiOutlinePuzzlePiece /> {t.Employee}</LinkItem>
         </Links>
       </div>
 
