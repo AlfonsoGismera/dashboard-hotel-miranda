@@ -1,0 +1,111 @@
+[
+    {
+      "employeeId": "EMP001",
+      "name": "María García",
+      "image": "https://randomuser.me/api/portraits/women/21.jpg",
+      "jobDesk": "Front Desk Manager",
+      "schedule": ["Mon 9:00-17:00", "Tue 9:00-17:00"],
+      "contact": "+34-600-123-456",
+      "status": "Active"
+    },
+    {
+      "employeeId": "EMP002",
+      "name": "Carlos López",
+      "image": "https://randomuser.me/api/portraits/men/22.jpg",
+      "jobDesk": "Housekeeping Supervisor",
+      "schedule": ["Wed 8:00-16:00", "Thu 8:00-16:00"],
+      "contact": "+34-600-234-567",
+      "status": "Inactive"
+    },
+    {
+      "employeeId": "EMP003",
+      "name": "Laura Martínez",
+      "image": "https://randomuser.me/api/portraits/women/23.jpg",
+      "jobDesk": "Concierge",
+      "schedule": ["Fri 10:00-18:00", "Sat 10:00-18:00"],
+      "contact": "+34-600-345-678",
+      "status": "Active"
+    },
+    {
+      "employeeId": "EMP004",
+      "name": "Javier Sánchez",
+      "image": "https://randomuser.me/api/portraits/men/24.jpg",
+      "jobDesk": "Maintenance Technician",
+      "schedule": ["Mon 7:00-15:00", "Tue 7:00-15:00"],
+      "contact": "+34-600-456-789",
+      "status": "Active"
+    },
+    {
+      "employeeId": "EMP005",
+      "name": "Ana Fernández",
+      "image": "https://randomuser.me/api/portraits/women/25.jpg",
+      "jobDesk": "Housekeeper",
+      "schedule": ["Wed 9:00-17:00", "Thu 9:00-17:00"],
+      "contact": "+34-600-567-890",
+      "status": "Inactive"
+    },
+    {
+      "employeeId": "EMP006",
+      "name": "Miguel Ruiz",
+      "image": "https://randomuser.me/api/portraits/men/26.jpg",
+      "jobDesk": "Bellboy",
+      "schedule": ["Fri 8:00-16:00", "Sat 8:00-16:00"],
+      "contact": "+34-600-678-901",
+      "status": "Active"
+    },
+    {
+      "employeeId": "EMP007",
+      "name": "Elena Torres",
+      "image": "https://randomuser.me/api/portraits/women/27.jpg",
+      "jobDesk": "Receptionist",
+      "schedule": ["Sun 9:00-17:00", "Mon 9:00-17:00"],
+      "contact": "+34-600-789-012",
+      "status": "Active"
+    },
+    {
+      "employeeId": "EMP008",
+      "name": "Rubén Díaz",
+      "image": "https://randomuser.me/api/portraits/men/28.jpg",
+      "jobDesk": "Chef",
+      "schedule": ["Tue 12:00-20:00", "Wed 12:00-20:00"],
+      "contact": "+34-600-890-123",
+      "status": "Inactive"
+    },
+    {
+      "employeeId": "EMP009",
+      "name": "Sara Romero",
+      "image": "https://randomuser.me/api/portraits/women/29.jpg",
+      "jobDesk": "Sous Chef",
+      "schedule": ["Thu 12:00-20:00", "Fri 12:00-20:00"],
+      "contact": "+34-600-901-234",
+      "status": "Active"
+    },
+    {
+      "employeeId": "EMP010",
+      "name": "Diego Moreno",
+      "image": "https://randomuser.me/api/portraits/men/30.jpg",
+      "jobDesk": "Waiter",
+      "schedule": ["Sat 14:00-22:00", "Sun 14:00-22:00"],
+      "contact": "+34-600-012-345",
+      "status": "Active"
+    },
+    {
+      "employeeId": "EMP011",
+      "name": "Carolina Ruiz",
+      "image": "https://randomuser.me/api/portraits/women/31.jpg",
+      "jobDesk": "Bartender",
+      "schedule": ["Mon 16:00-24:00", "Tue 16:00-24:00"],
+      "contact": "+34-600-123-987",
+      "status": "Inactive"
+    },
+    {
+      "employeeId": "EMP012",
+      "name": "Luis Pérez",
+      "image": "https://randomuser.me/api/portraits/men/32.jpg",
+      "jobDesk": "Security Guard",
+      "schedule": ["Wed 22:00-06:00", "Thu 22:00-06:00"],
+      "contact": "+34-600-234-876",
+      "status": "Active"
+    }
+  ]
+  
