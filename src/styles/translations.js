@@ -77,7 +77,6 @@ const translations = {
     inactive: "Inactive",
 
     // Room List page translations
-    // (Room table columns and filters)
     roomname: "Room Name",
     bedtype: "Bed Type",
     roomfloor: "Room Floor",
@@ -85,6 +84,14 @@ const translations = {
     rate: "Rate",
     available: "Available",
     booked: "Booked",
+    roomsPageTitle:    'All Rooms',        
+    roomName:          'Room Name',         
+    roomFloor:         'Floor',             
+    facilities:        'Facilities',       
+    rate:              'Rate',             
+    available:         'Available',         
+    booked:            'Booked',     
+
     // reuse 'all', 'previous', 'next', 'entriesInfo'
   },
 
@@ -166,7 +173,6 @@ const translations = {
     inactive: "Inactivo",
 
     // Room List page translations
-    // (Room table columns and filters)
     roomname: "Nombre de Habitación",
     bedtype: "Tipo de Cama",
     roomfloor: "Planta",
@@ -174,6 +180,13 @@ const translations = {
     rate: "Tarifa",
     available: "Disponible",
     booked: "Ocupada",
+    roomsPageTitle:    'Todas las Habitaciones',
+    roomName:          'Nombre de Habitación',
+    roomFloor:         'Planta',
+    facilities:        'Servicios',
+    rate:              'Tarifa',
+    available:         'Disponible',
+    booked:            'Ocupada',
     // reuse 'all', 'previous', 'next', 'entriesInfo'
   }
 };

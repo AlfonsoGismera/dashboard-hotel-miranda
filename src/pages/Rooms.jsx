@@ -33,8 +33,8 @@ const Td = styled.td`
 const CenterTd = styled(Td)`text-align:center;`;
 
 const NameCell = styled(Td)`
-  display:flex; align-items:center; gap:0.5rem;
-  img { width:40px; height:40px; border-radius:4px; object-fit:cover; }
+  display:flex; align-items:center; gap:1rem;
+  img { width:90px; height:55px; border-radius:4px; object-fit:cover; }
 `;
 
 const Button = styled.button`
@@ -121,8 +121,9 @@ export default function Rooms() {
                 <NameCell>
                   <img src={r.image} alt={r.roomName}/>
                   <div>
+                    <small>{r.roomId}</small><br/>
                     <strong>{r.roomName}</strong><br/>
-                    <small>{r.roomId}</small>
+                    
                   </div>
                 </NameCell>
                 <Td>{r.bedType}</Td>
