@@ -42,6 +42,7 @@ const translations = {
     next: "Next",
     entriesInfo: "{start} to {end} of {total} entries",
     page: "Page",
+
     // Login page
     username: "Username",
     password: "Password",
@@ -62,24 +63,29 @@ const translations = {
     offerPrice: "Offer Price",
     cancellation: "Cancellation Policy",
     photos: "Photos",
+
     // Employee page
-    employeesPageTitle: "Todos los Empleados",
-    employee: "Empleado",
-    employeeId: "ID Empleado",
-    jobDesk: "Puesto",
-    schedule: "Horario",
-    contact: "Contacto",
-    status: "Estado",
-    active: "Activo",
-    inactive: "Inactivo",
-    name:           'Name',           
-    jobDesk:        'Job',            
-    schedule:       'Schedule',        
-    viewSchedule:   'View Schedule',   
-    contact:        'Contact',         
-    status:         'Status',          
-    active:         'Active',         
-    inactive:       'Inactive',       
+    employeesPageTitle: "All Employees",
+    employee: "Employee",
+    employeeId: "Employee ID",
+    jobDesk: "Job Desk",
+    schedule: "Schedule",
+    viewSchedule: "View Schedule",
+    contact: "Contact",
+    status: "Status",
+    active: "Active",
+    inactive: "Inactive",
+
+    // Room List page translations
+    // (Room table columns and filters)
+    roomname: "Room Name",
+    bedtype: "Bed Type",
+    roomfloor: "Room Floor",
+    facilities: "Facilities",
+    rate: "Rate",
+    available: "Available",
+    booked: "Booked",
+    // reuse 'all', 'previous', 'next', 'entriesInfo'
   },
 
   es: {
@@ -139,35 +145,37 @@ const translations = {
     offerPrice: "Precio con Oferta",
     cancellation: "Política de Cancelación",
     photos: "Fotos",
-    username: "Usuario",
-    password: "Contraseña",
-    signIn: "Iniciar sesión",
-    invalidCredentials: "Credenciales inválidas",
-    // Página de Login
+
+    // Login page
     username: "Usuario",
     password: "Contraseña",
     signIn: "Iniciar sesión",
     invalidCredentials: "Credenciales inválidas",
     logout: "Cerrar sesión",
-    // Pagina de Empleado
+
+    // Employee page
     employeesPageTitle: "Todos los Empleados",
     employee: "Empleado",
     employeeId: "ID Empleado",
     jobDesk: "Puesto",
     schedule: "Horario",
+    viewSchedule: "Ver Horario",
     contact: "Contacto",
     status: "Estado",
     active: "Activo",
     inactive: "Inactivo",
-    name:           'Nombre',          
-    jobDesk:        'Trabajo',       
-    schedule:       'Horario',         
-    viewSchedule:   'Ver Horario',     
-    contact:        'Contacto',        
-    status:         'Estado',         
-    active:         'Activo',          
-    inactive:       'Inactivo', 
-  },
+
+    // Room List page translations
+    // (Room table columns and filters)
+    roomname: "Nombre de Habitación",
+    bedtype: "Tipo de Cama",
+    roomfloor: "Planta",
+    facilities: "Servicios",
+    rate: "Tarifa",
+    available: "Disponible",
+    booked: "Ocupada",
+    // reuse 'all', 'previous', 'next', 'entriesInfo'
+  }
 };
 
 export default translations;
