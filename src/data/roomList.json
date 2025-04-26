@@ -6,7 +6,8 @@
       "roomFloor": "A-1",
       "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar"],
       "rate": "$120/Night",
-      "status": "Available"
+      "status": "Available",
+      "image": "https://picsum.photos/300/200"
     },
     {
       "roomId": "R002",
@@ -15,7 +16,8 @@
       "roomFloor": "A-2",
       "facilities": ["Wi-Fi", "Air Conditioning", "Work Desk"],
       "rate": "$85/Night",
-      "status": "Booked"
+      "status": "Booked",
+      "image": "https://picsum.photos/300/200"
     },
     {
       "roomId": "R003",
@@ -24,7 +26,8 @@
       "roomFloor": "B-1",
       "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar", "Private Balcony", "Kitchenette"],
       "rate": "$250/Night",
-      "status": "Available"
+      "status": "Available",
+      "image": "https://picsum.photos/300/200"
     },
     {
       "roomId": "R004",
@@ -33,7 +36,8 @@
       "roomFloor": "B-2",
       "facilities": ["Wi-Fi", "Flat Screen TV"],
       "rate": "$60/Night",
-      "status": "Booked"
+      "status": "Booked",
+      "image": "https://picsum.photos/300/200"
     },
     {
       "roomId": "R005",
@@ -42,7 +46,8 @@
       "roomFloor": "C-1",
       "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Kitchenette", "Play Area"],
       "rate": "$180/Night",
-      "status": "Available"
+      "status": "Available",
+      "image": "https://picsum.photos/300/200"
     },
     {
       "roomId": "R006",
@@ -51,7 +56,8 @@
       "roomFloor": "C-2",
       "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar", "Jacuzzi", "Private Terrace"],
       "rate": "$400/Night",
-      "status": "Booked"
+      "status": "Booked",
+      "image": "https://picsum.photos/300/200"
     },
     {
       "roomId": "R007",
@@ -60,7 +66,8 @@
       "roomFloor": "D-1",
       "facilities": ["Wi-Fi", "Air Conditioning"],
       "rate": "$50/Night",
-      "status": "Available"
+      "status": "Available",
+      "image": "https://picsum.photos/300/200"
     },
     {
       "roomId": "R008",
@@ -69,7 +76,8 @@
       "roomFloor": "D-2",
       "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV"],
       "rate": "$95/Night",
-      "status": "Available"
+      "status": "Available",
+      "image": "https://picsum.photos/300/200"
     },
     {
       "roomId": "R009",
@@ -78,7 +86,8 @@
       "roomFloor": "E-1",
       "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar", "City View"],
       "rate": "$220/Night",
-      "status": "Booked"
+      "status": "Booked",
+      "image": "https://picsum.photos/300/200"
     },
     {
       "roomId": "R010",
@@ -87,7 +96,8 @@
       "roomFloor": "E-2",
       "facilities": ["Wi-Fi", "Air Conditioning", "Roll-in Shower"],
       "rate": "$100/Night",
-      "status": "Available"
+      "status": "Available",
+      "image": "https://picsum.photos/300/200"
     },
     {
       "roomId": "R011",
@@ -96,7 +106,8 @@
       "roomFloor": "F-1",
       "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar", "Private Pool", "Panoramic View"],
       "rate": "$500/Night",
-      "status": "Booked"
+      "status": "Booked",
+      "image": "https://picsum.photos/300/200"
     },
     {
       "roomId": "R012",
@@ -105,7 +116,8 @@
       "roomFloor": "F-2",
       "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar"],
       "rate": "$160/Night",
-      "status": "Available"
+      "status": "Available",
+      "image": "https://picsum.photos/300/200"
     },
     {
       "roomId": "R013",
@@ -114,7 +126,8 @@
       "roomFloor": "G-1",
       "facilities": ["Wi-Fi", "Air Conditioning", "Work Desk"],
       "rate": "$110/Night",
-      "status": "Available"
+      "status": "Available",
+      "image": "https://picsum.photos/300/200"
     },
     {
       "roomId": "R014",
@@ -123,7 +136,8 @@
       "roomFloor": "G-2",
       "facilities": ["Wi-Fi", "Air Conditioning", "Kitchenette", "Flat Screen TV"],
       "rate": "$200/Night",
-      "status": "Booked"
+      "status": "Booked",
+      "image": "https://picsum.photos/300/200"
     },
     {
       "roomId": "R015",
@@ -132,7 +146,8 @@
       "roomFloor": "H-1",
       "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Loft Area", "Mini Bar"],
       "rate": "$230/Night",
-      "status": "Available"
+      "status": "Available",
+      "image": "https://picsum.photos/300/200"
     }
   ]
   
