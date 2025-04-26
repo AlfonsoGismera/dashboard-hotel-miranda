@@ -1,0 +1,138 @@
+[
+    {
+      "roomId": "R001",
+      "roomName": "Deluxe King Room",
+      "bedType": "King Bed",
+      "roomFloor": "A-1",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar"],
+      "rate": "$120/Night",
+      "status": "Available"
+    },
+    {
+      "roomId": "R002",
+      "roomName": "Standard Twin Room",
+      "bedType": "Twin Beds",
+      "roomFloor": "A-2",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Work Desk"],
+      "rate": "$85/Night",
+      "status": "Booked"
+    },
+    {
+      "roomId": "R003",
+      "roomName": "Executive Suite",
+      "bedType": "King Bed",
+      "roomFloor": "B-1",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar", "Private Balcony", "Kitchenette"],
+      "rate": "$250/Night",
+      "status": "Available"
+    },
+    {
+      "roomId": "R004",
+      "roomName": "Single Room",
+      "bedType": "Single Bed",
+      "roomFloor": "B-2",
+      "facilities": ["Wi-Fi", "Flat Screen TV"],
+      "rate": "$60/Night",
+      "status": "Booked"
+    },
+    {
+      "roomId": "R005",
+      "roomName": "Family Suite",
+      "bedType": "Two Queen Beds",
+      "roomFloor": "C-1",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Kitchenette", "Play Area"],
+      "rate": "$180/Night",
+      "status": "Available"
+    },
+    {
+      "roomId": "R006",
+      "roomName": "Presidential Suite",
+      "bedType": "King Bed",
+      "roomFloor": "C-2",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar", "Jacuzzi", "Private Terrace"],
+      "rate": "$400/Night",
+      "status": "Booked"
+    },
+    {
+      "roomId": "R007",
+      "roomName": "Economy Single",
+      "bedType": "Single Bed",
+      "roomFloor": "D-1",
+      "facilities": ["Wi-Fi", "Air Conditioning"],
+      "rate": "$50/Night",
+      "status": "Available"
+    },
+    {
+      "roomId": "R008",
+      "roomName": "Queen Room",
+      "bedType": "Queen Bed",
+      "roomFloor": "D-2",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV"],
+      "rate": "$95/Night",
+      "status": "Available"
+    },
+    {
+      "roomId": "R009",
+      "roomName": "Corner Suite",
+      "bedType": "King Bed",
+      "roomFloor": "E-1",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar", "City View"],
+      "rate": "$220/Night",
+      "status": "Booked"
+    },
+    {
+      "roomId": "R010",
+      "roomName": "Accessible Room",
+      "bedType": "Queen Bed",
+      "roomFloor": "E-2",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Roll-in Shower"],
+      "rate": "$100/Night",
+      "status": "Available"
+    },
+    {
+      "roomId": "R011",
+      "roomName": "Penthouse Suite",
+      "bedType": "King Bed",
+      "roomFloor": "F-1",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar", "Private Pool", "Panoramic View"],
+      "rate": "$500/Night",
+      "status": "Booked"
+    },
+    {
+      "roomId": "R012",
+      "roomName": "Junior Suite",
+      "bedType": "Queen Bed",
+      "roomFloor": "F-2",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar"],
+      "rate": "$160/Night",
+      "status": "Available"
+    },
+    {
+      "roomId": "R013",
+      "roomName": "Double Room",
+      "bedType": "Two Double Beds",
+      "roomFloor": "G-1",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Work Desk"],
+      "rate": "$110/Night",
+      "status": "Available"
+    },
+    {
+      "roomId": "R014",
+      "roomName": "Studio Suite",
+      "bedType": "King Bed",
+      "roomFloor": "G-2",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Kitchenette", "Flat Screen TV"],
+      "rate": "$200/Night",
+      "status": "Booked"
+    },
+    {
+      "roomId": "R015",
+      "roomName": "Loft Suite",
+      "bedType": "King Bed",
+      "roomFloor": "H-1",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Loft Area", "Mini Bar"],
+      "rate": "$230/Night",
+      "status": "Available"
+    }
+  ]
+  
