@@ -1,3 +1,4 @@
+// src/components/Sidebar.jsx
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
@@ -17,7 +18,6 @@ const Sider = styled.nav`
   color: ${({ theme }) => theme.text};
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding: 1rem 0;
 `;
 
@@ -37,7 +37,6 @@ const StarsIcon = styled(GiStarsStack)`
   color: ${({ theme }) => theme.chart.barSecondary};
   font-size: 1.25rem;
 `;
-
 const HotelIcon = styled(FaHotel)`
   color: ${({ theme }) => theme.text};
   font-size: 1.5rem;
@@ -57,17 +56,14 @@ const Subtitle = styled.div`
   font-size: 0.75rem;
   color: ${({ theme }) => theme.subtitle};
 `;
-const SubtitleSmall = styled.div`
-  font-size: 0.7rem;
-  color: ${({ theme }) => theme.subtitle};
-`;
 
 const Links = styled.div`
-  flex: 1;
+  flex: 1;                
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   padding: 0 1rem;
+  overflow-y: auto;     
 `;
 const LinkItem = styled(NavLink)`
   display: flex;
@@ -83,23 +79,21 @@ const LinkItem = styled(NavLink)`
   }
 `;
 
-// --- footer ---
-const Footer = styled.div`
-  padding: 1rem;
-`;
-
+// lo que antes era FooterCard lo colocamos justo tras los links
 const FooterCard = styled.div`
+  width: calc(100% - 2rem);
   background: ${({ theme }) => theme.cardBg};
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   border-radius: 0.5rem;
-  padding-bottom: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 1rem;
-  margin-top: 6rem;
+  padding: 1rem;
+  margin: 1rem;
+  margin-top: 4rem;
 `;
+
 const FooterAvatar = styled.img`
   width: 64px;
   height: 64px;
@@ -107,15 +101,18 @@ const FooterAvatar = styled.img`
   object-fit: cover;
   margin-top: -2rem;
 `;
+
 const FooterName = styled.div`
   font-size: 1rem;
   color: ${({ theme }) => theme.text};
   font-weight: bold;
 `;
+
 const FooterEmail = styled.div`
   font-size: 0.75rem;
   color: ${({ theme }) => theme.subtitle};
 `;
+
 const ContactButton = styled.button`
   background: #ffffff;
   color: #135846;
@@ -131,12 +128,14 @@ const ContactButton = styled.button`
     &:hover { background: #0f3d33; }
   `}
 `;
+
 const HotelFooter = styled.div`
   font-size: 0.8rem;
   color: ${({ theme }) => theme.text};
   text-align: center;
   margin-top: 0.5rem;
 `;
+
 const FooterLegal = styled.div`
   font-size: 0.6rem;
   color: ${({ theme }) => theme.subtitle};
@@ -162,24 +161,21 @@ export default function Sidebar() {
           </TextColumn>
         </Header>
         <Links>
-          <LinkItem to="/"> <TbPuzzle2 /> {t.dashboard}</LinkItem>
-          <LinkItem to="/rooms"> <IoMdKey /> {t.rooms}</LinkItem>
-          <LinkItem to="/bookings"> <LuCalendarCheck2 /> {t.bookings}</LinkItem>
-          <LinkItem to="/users"> <IoPeopleOutline /> {t.users}</LinkItem>
-          <LinkItem to="/employee"> <HiOutlinePuzzlePiece /> {t.Employee}</LinkItem>
+          <LinkItem to="/"><TbPuzzle2 /> {t.dashboard}</LinkItem>
+          <LinkItem to="/rooms"><IoMdKey /> {t.rooms}</LinkItem>
+          <LinkItem to="/bookings"><LuCalendarCheck2 /> {t.bookings}</LinkItem>
+          <LinkItem to="/users"><IoPeopleOutline /> {t.users}</LinkItem>
+          <LinkItem to="/employee"><HiOutlinePuzzlePiece /> {t.Employee}</LinkItem>
         </Links>
-      </div>
-
-      <Footer>
         <FooterCard>
-          <FooterAvatar src='https://randomuser.me/api/portraits/women/10.jpg' alt={user.name} />
+          <FooterAvatar src="https://randomuser.me/api/portraits/women/10.jpg" alt={user.name} />
           <FooterName>Johana Martín</FooterName>
           <FooterEmail>{user.email || 'Johana_Martin@mail.com'}</FooterEmail>
-          <ContactButton onClick={logout}>{t.logout || 'Logout'}</ContactButton>
+          <ContactButton onClick={logout}>{t.logout}</ContactButton>
         </FooterCard>
-        <HotelFooter>{t.hotelName}</HotelFooter>
-        <FooterLegal>© 2025 Travl All Rights Reserved</FooterLegal>
-      </Footer>
+      </div>
+      <HotelFooter>{t.hotelName}</HotelFooter>
+      <FooterLegal>© 2025 Travl All Rights Reserved</FooterLegal>
     </Sider>
   );
 }
