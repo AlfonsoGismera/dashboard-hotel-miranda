@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import roomList from '../../data/roomList.json';
 
-// Simulación de API con setTimeout
+// Simulación de API falsa
+// En un caso real, aquí harías una llamada a tu API para obtener los datos
 const fakeApi = {
   fetchAll: () => new Promise(res => setTimeout(() => {
     if (!localStorage.getItem('rooms')) {
@@ -49,7 +50,7 @@ const roomsSlice = createSlice({
   reducers: {},
   extraReducers: builder => {
     builder
-      // fetchRooms
+
       .addCase(fetchRooms.pending, state => { state.status = 'loading'; })
       .addCase(fetchRooms.fulfilled, (state, action) => {
         state.status = 'succeeded';
@@ -59,16 +60,16 @@ const roomsSlice = createSlice({
         state.status = 'failed';
         state.error = action.error.message;
       })
-      // updateRoom
+
       .addCase(updateRoom.fulfilled, (state, action) => {
         const upd = action.payload;
         state.items = state.items.map(r => r.roomId === upd.roomId ? upd : r);
       })
-      // deleteRoom
+
       .addCase(deleteRoom.fulfilled, (state, action) => {
         state.items = state.items.filter(r => r.roomId !== action.payload);
       });
-    // (puedes añadir también fetchOne.fulfilled y createRoom.fulfilled si los usas)
+
   }
 });
 
