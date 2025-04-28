@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { Provider } from 'react-redux';
+import { store } from './store';
 import { AuthProvider } from './context/AuthContext';
 import { ThemeProviderWrapper } from './context/ThemeContext';
 import { LanguageProvider } from './context/LanguageContext';
@@ -14,7 +16,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <ThemeProviderWrapper>
         <LanguageProvider>
           <GlobalStyle />
-          <App />
+          <Provider store={store}>
+            <App />
+          </Provider>
         </LanguageProvider>
       </ThemeProviderWrapper>
     </AuthProvider>
