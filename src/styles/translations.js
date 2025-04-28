@@ -84,13 +84,13 @@ const translations = {
     rate: "Rate",
     available: "Available",
     booked: "Booked",
-    roomsPageTitle:    'All Rooms',        
-    roomName:          'Room Name',         
-    roomFloor:         'Floor',             
-    facilities:        'Facilities',       
-    rate:              'Rate',             
-    available:         'Available',         
-    booked:            'Booked',     
+    roomsPageTitle:'All Rooms',        
+    roomName:'Room Name',         
+    roomFloor:'Floor',             
+    facilities:'Facilities',       
+    rate:'Rate',             
+    available:'Available',         
+    booked:'Booked',     
 
     // reuse 'all', 'previous', 'next', 'entriesInfo'
   },
@@ -111,7 +111,7 @@ const translations = {
     Employee: "Empleado",
 
     // Dashboard cards
-    newBooking: "Nueva Reserva",
+    newBooking: "Nuevas Reservas",
     scheduledRoom: "Habitaciones Programadas",
     guests: "Huéspedes",
     availableToday: "Disponibles Hoy",
@@ -140,11 +140,11 @@ const translations = {
     page: "Página",
 
     // UserDetail page
-    userDetail: "Detalle de Usuario",
+    userDetail: "Detalles de Usuario",
     price: "Precio",
     night: "noche",
     facilities: "Servicios",
-    bedType: "Tipo de Cama",
+    bedType: "Tipos de Cama",
     description: "Descripción",
     offer: "Oferta",
     rate: "Tarifa",
@@ -180,13 +180,13 @@ const translations = {
     rate: "Tarifa",
     available: "Disponible",
     booked: "Ocupada",
-    roomsPageTitle:    'Todas las Habitaciones',
-    roomName:          'Nombre de Habitación',
-    roomFloor:         'Planta',
-    facilities:        'Servicios',
-    rate:              'Tarifa',
-    available:         'Disponible',
-    booked:            'Ocupada',
+    roomsPageTitle:'Todas las Habitaciones',
+    roomName:'Nombre de Habitación',
+    roomFloor:'Planta',
+    facilities:'Servicios',
+    rate:'Tarifa',
+    available:'Disponible',
+    booked:'Ocupada',
     // reuse 'all', 'previous', 'next', 'entriesInfo'
   }
 };
