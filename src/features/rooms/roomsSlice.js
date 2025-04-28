@@ -1,37 +1,43 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import roomList from '../../data/roomList.json';
 
 // Simulación de API con setTimeout
 const fakeApi = {
-  fetchAll: () => new Promise(res => setTimeout(() => res(JSON.parse(localStorage.getItem('rooms')||'[]')), 200)),
+  fetchAll: () => new Promise(res => setTimeout(() => {
+    if (!localStorage.getItem('rooms')) {
+      localStorage.setItem('rooms', JSON.stringify(roomList));
+    }
+    res(JSON.parse(localStorage.getItem('rooms')));
+  }, 200)),
   fetchOne: id => new Promise(res => setTimeout(() => {
-    const all = JSON.parse(localStorage.getItem('rooms')||'[]');
-    res(all.find(r=>r.roomId===id));
-  },200)),
+    const all = JSON.parse(localStorage.getItem('rooms') || '[]');
+    res(all.find(r => r.roomId === id));
+  }, 200)),
   create: room => new Promise(res => setTimeout(() => {
-    const all = JSON.parse(localStorage.getItem('rooms')||'[]');
+    const all = JSON.parse(localStorage.getItem('rooms') || '[]');
     all.push(room);
     localStorage.setItem('rooms', JSON.stringify(all));
     res(room);
-  },200)),
+  }, 200)),
   update: room => new Promise(res => setTimeout(() => {
-    let all = JSON.parse(localStorage.getItem('rooms')||'[]');
-    all = all.map(r=> r.roomId===room.roomId ? room : r);
+    let all = JSON.parse(localStorage.getItem('rooms') || '[]');
+    all = all.map(r => r.roomId === room.roomId ? room : r);
     localStorage.setItem('rooms', JSON.stringify(all));
     res(room);
-  },200)),
+  }, 200)),
   remove: id => new Promise(res => setTimeout(() => {
-    let all = JSON.parse(localStorage.getItem('rooms')||'[]');
-    all = all.filter(r=>r.roomId!==id);
+    let all = JSON.parse(localStorage.getItem('rooms') || '[]');
+    all = all.filter(r => r.roomId !== id);
     localStorage.setItem('rooms', JSON.stringify(all));
     res(id);
-  },200)),
+  }, 200)),
 };
 
-export const fetchRooms   = createAsyncThunk('rooms/fetchAll',   async ()=> await fakeApi.fetchAll());
-export const fetchRoom    = createAsyncThunk('rooms/fetchOne',   async id=> await fakeApi.fetchOne(id));
-export const createRoom   = createAsyncThunk('rooms/create',     async room=> await fakeApi.create(room));
-export const updateRoom   = createAsyncThunk('rooms/update',     async room=> await fakeApi.update(room));
-export const deleteRoom   = createAsyncThunk('rooms/delete',     async id=> await fakeApi.remove(id));
+export const fetchRooms = createAsyncThunk('rooms/fetchAll', async () => await fakeApi.fetchAll());
+export const fetchRoom = createAsyncThunk('rooms/fetchOne', async id => await fakeApi.fetchOne(id));
+export const createRoom = createAsyncThunk('rooms/create', async room => await fakeApi.create(room));
+export const updateRoom = createAsyncThunk('rooms/update', async room => await fakeApi.update(room));
+export const deleteRoom = createAsyncThunk('rooms/delete', async id => await fakeApi.remove(id));
 
 const roomsSlice = createSlice({
   name: 'rooms',
@@ -45,24 +51,24 @@ const roomsSlice = createSlice({
     builder
       // fetchRooms
       .addCase(fetchRooms.pending, state => { state.status = 'loading'; })
-      .addCase(fetchRooms.fulfilled, (state,action) => {
+      .addCase(fetchRooms.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.items = action.payload;
       })
-      .addCase(fetchRooms.rejected, (state,action) => {
+      .addCase(fetchRooms.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
       })
       // updateRoom
-      .addCase(updateRoom.fulfilled,(state,action)=>{
+      .addCase(updateRoom.fulfilled, (state, action) => {
         const upd = action.payload;
-        state.items = state.items.map(r=> r.roomId===upd.roomId?upd:r);
+        state.items = state.items.map(r => r.roomId === upd.roomId ? upd : r);
       })
       // deleteRoom
-      .addCase(deleteRoom.fulfilled,(state,action)=>{
-        state.items = state.items.filter(r=>r.roomId!==action.payload);
+      .addCase(deleteRoom.fulfilled, (state, action) => {
+        state.items = state.items.filter(r => r.roomId !== action.payload);
       });
-    // (igual puedes añadir fetchOne.fulfilled y createRoom.fulfilled…)
+    // (puedes añadir también fetchOne.fulfilled y createRoom.fulfilled si los usas)
   }
 });
 

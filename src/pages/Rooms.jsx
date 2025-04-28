@@ -1,8 +1,9 @@
 // src/pages/Rooms.jsx
-import React, { useState, useMemo, useContext } from 'react';
+import React, { useState, useMemo, useContext, useEffect } from 'react';
 import styled, { useTheme } from 'styled-components';
 import { LanguageContext } from '../context/LanguageContext';
-import rooms from '../data/roomList.json';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchRooms, updateRoom, deleteRoom } from '../features/rooms/roomsSlice';
 import { FiMoreVertical, FiChevronUp, FiChevronDown } from 'react-icons/fi';
 
 const Page = styled.div`padding:1rem;`;
@@ -58,17 +59,23 @@ const PageButton = styled.button`
 export default function Rooms() {
   const { t } = useContext(LanguageContext);
   const theme = useTheme();
+  const dispatch = useDispatch();
+  const rooms = useSelector(state=>state.rooms.items);
 
   const [page,setPage] = useState(1);
   const [sortField,setSortField] = useState('roomName');
   const [sortAsc,setSortAsc] = useState(true);
   const [filter,setFilter] = useState('All');
+  const [menuOpenId, setMenuOpenId] = useState(null);
   const pageSize = 10;
+
+  // Load rooms on mount
+  useEffect(()=>{ dispatch(fetchRooms()); },[dispatch]);
 
   const statuses = ['All','Available','Booked'];
   const filtered = useMemo(
     ()=> rooms.filter(r=> filter==='All' || r.status===filter),
-    [filter]
+    [rooms,filter]
   );
   const sorted = useMemo(()=>[...filtered].sort((a,b)=>{
     let av=a[sortField], bv=b[sortField];
@@ -86,6 +93,16 @@ export default function Rooms() {
   const headerClick = f => {
     if(sortField===f) setSortAsc(!sortAsc);
     else { setSortField(f); setSortAsc(true); }
+  };
+
+  const onDelete = id => {
+    if(window.confirm('Delete this room?')) dispatch(deleteRoom(id));
+    setMenuOpenId(null);
+  };
+  const onEdit = r => {
+    const newName = window.prompt('New room name', r.roomName);
+    if(newName) dispatch(updateRoom({...r, roomName: newName}));
+    setMenuOpenId(null);
   };
 
   return (
@@ -122,8 +139,7 @@ export default function Rooms() {
                   <img src={r.image} alt={r.roomName}/>
                   <div>
                     <small>{r.roomId}</small><br/>
-                    <strong>{r.roomName}</strong><br/>
-                    
+                    <strong>{r.roomName}</strong>
                   </div>
                 </NameCell>
                 <Td>{r.bedType}</Td>
@@ -131,14 +147,26 @@ export default function Rooms() {
                 <Td>{r.facilities.join(', ')}</Td>
                 <Td>{r.rate}</Td>
                 <CenterTd>
-                  <Button
-                    $bg={r.status==='Available'?'green':'red'}
-                    $color="#fff"
-                  >
+                  <Button $bg={r.status==='Available'?'green':'red'} $color="#fff">
                     {t[r.status.toLowerCase()]||r.status}
                   </Button>
                 </CenterTd>
-                <CenterTd><FiMoreVertical/></CenterTd>
+                <CenterTd style={{position:'relative'}}>
+                  <FiMoreVertical 
+                    style={{cursor:'pointer'}} 
+                    onClick={()=>setMenuOpenId(menuOpenId===r.roomId?null:r.roomId)} 
+                  />
+                  {menuOpenId===r.roomId && (
+                    <div style={{
+                      position:'absolute', top:'100%', right:0,
+                      background:theme.cardBg, boxShadow:'0 0 5px rgba(0,0,0,0.3)',
+                      borderRadius:'4px', overflow:'hidden'
+                    }}>
+                      <div onClick={()=>onEdit(r)} style={{padding:'0.5rem',cursor:'pointer'}}>Edit</div>
+                      <div onClick={()=>onDelete(r.roomId)} style={{padding:'0.5rem',cursor:'pointer'}}>Delete</div>
+                    </div>
+                  )}
+                </CenterTd>
               </tr>
             ))}
           </tbody>
