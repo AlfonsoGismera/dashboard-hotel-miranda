@@ -1,0 +1,153 @@
+[
+    {
+      "roomId": "R001",
+      "roomName": "Deluxe King Room",
+      "bedType": "King Bed",
+      "roomFloor": "A-1",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar"],
+      "rate": "$120/Night",
+      "status": "Available",
+      "image": "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "roomId": "R002",
+      "roomName": "Standard Twin Room",
+      "bedType": "Twin Beds",
+      "roomFloor": "A-2",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Work Desk"],
+      "rate": "$85/Night",
+      "status": "Booked",
+      "image": "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "roomId": "R003",
+      "roomName": "Executive Suite",
+      "bedType": "King Bed",
+      "roomFloor": "B-1",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar", "Private Balcony", "Kitchenette"],
+      "rate": "$250/Night",
+      "status": "Available",
+      "image": "https://images.pexels.com/photos/271618/pexels-photo-271618.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "roomId": "R004",
+      "roomName": "Single Room",
+      "bedType": "Single Bed",
+      "roomFloor": "B-2",
+      "facilities": ["Wi-Fi", "Flat Screen TV"],
+      "rate": "$60/Night",
+      "status": "Booked",
+      "image": "https://images.pexels.com/photos/1743231/pexels-photo-1743231.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "roomId": "R005",
+      "roomName": "Family Suite",
+      "bedType": "Two Queen Beds",
+      "roomFloor": "C-1",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Kitchenette", "Play Area"],
+      "rate": "$180/Night",
+      "status": "Available",
+      "image": "https://images.pexels.com/photos/1579253/pexels-photo-1579253.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "roomId": "R006",
+      "roomName": "Presidential Suite",
+      "bedType": "King Bed",
+      "roomFloor": "C-2",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar", "Jacuzzi", "Private Terrace"],
+      "rate": "$400/Night",
+      "status": "Booked",
+      "image": "https://images.pexels.com/photos/172872/pexels-photo-172872.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "roomId": "R007",
+      "roomName": "Economy Single",
+      "bedType": "Single Bed",
+      "roomFloor": "D-1",
+      "facilities": ["Wi-Fi", "Air Conditioning"],
+      "rate": "$50/Night",
+      "status": "Available",
+      "image": "https://images.pexels.com/photos/97083/pexels-photo-97083.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "roomId": "R008",
+      "roomName": "Queen Room",
+      "bedType": "Queen Bed",
+      "roomFloor": "D-2",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV"],
+      "rate": "$95/Night",
+      "status": "Available",
+      "image": "https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "roomId": "R009",
+      "roomName": "Corner Suite",
+      "bedType": "King Bed",
+      "roomFloor": "E-1",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar", "City View"],
+      "rate": "$220/Night",
+      "status": "Booked",
+      "image": "https://images.pexels.com/photos/210604/pexels-photo-210604.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "roomId": "R010",
+      "roomName": "Accessible Room",
+      "bedType": "Queen Bed",
+      "roomFloor": "E-2",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Roll-in Shower"],
+      "rate": "$100/Night",
+      "status": "Available",
+      "image": "https://images.pexels.com/photos/1838554/pexels-photo-1838554.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "roomId": "R011",
+      "roomName": "Penthouse Suite",
+      "bedType": "King Bed",
+      "roomFloor": "F-1",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar", "Private Pool", "Panoramic View"],
+      "rate": "$500/Night",
+      "status": "Booked",
+      "image": "https://media.istockphoto.com/id/1050564510/es/foto/3d-rendering-dormitorio-de-lujo-hermoso-hotel-con-tv.jpg?b=1&s=612x612&w=0&k=20&c=tVPnedwOaqxjRsQJJoYaRI1INZjECjiekBguvaZnULE="
+    },
+    {
+      "roomId": "R012",
+      "roomName": "Junior Suite",
+      "bedType": "Queen Bed",
+      "roomFloor": "F-2",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Mini Bar"],
+      "rate": "$160/Night",
+      "status": "Available",
+      "image": "https://images.pexels.com/photos/6782567/pexels-photo-6782567.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "roomId": "R013",
+      "roomName": "Double Room",
+      "bedType": "Two Double Beds",
+      "roomFloor": "G-1",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Work Desk"],
+      "rate": "$110/Night",
+      "status": "Available",
+      "image": "https://images.pexels.com/photos/6899433/pexels-photo-6899433.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "roomId": "R014",
+      "roomName": "Studio Suite",
+      "bedType": "King Bed",
+      "roomFloor": "G-2",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Kitchenette", "Flat Screen TV"],
+      "rate": "$200/Night",
+      "status": "Booked",
+      "image": "https://images.pexels.com/photos/6970069/pexels-photo-6970069.jpeg?auto=compress&cs=tinysrgb&w=800"
+    },
+    {
+      "roomId": "R015",
+      "roomName": "Loft Suite",
+      "bedType": "King Bed",
+      "roomFloor": "H-1",
+      "facilities": ["Wi-Fi", "Air Conditioning", "Flat Screen TV", "Loft Area", "Mini Bar"],
+      "rate": "$230/Night",
+      "status": "Available",
+      "image": "https://images.pexels.com/photos/8092391/pexels-photo-8092391.jpeg?auto=compress&cs=tinysrgb&w=800"
+    }
+  ]
+  
