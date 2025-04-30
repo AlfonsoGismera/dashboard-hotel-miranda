@@ -13,6 +13,8 @@ const translations = {
     rooms: "Rooms",
     users: "Users",
     Employee: "Employee",
+    cancel: "Cancel",
+    save: "Save",
 
     // Dashboard cards
     newBooking: "New Booking",
@@ -109,6 +111,8 @@ const translations = {
     rooms: "Habitaciones",
     users: "Usuarios",
     Employee: "Empleado",
+    cancel: "Cancelar",
+    save: "Guardar",
 
     // Dashboard cards
     newBooking: "Nuevas Reservas",

@@ -66,9 +66,9 @@ const PageButton = styled.button`
   &:hover{background:${({ theme }) => theme.iconActive}; color:#fff;}
 `;
 
-// --- missing Menu & MenuItem ---
 const Menu = styled.ul`
   position: absolute;
+  right: 4rem;
   background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   border-radius:4px;
