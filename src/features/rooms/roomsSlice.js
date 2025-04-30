@@ -1,8 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import roomList from '../../data/roomList.json';
 
-// Simulación de API falsa
-// En un caso real, aquí harías una llamada a tu API para obtener los datos
+
 const fakeApi = {
   fetchAll: () => new Promise(res => setTimeout(() => {
     if (!localStorage.getItem('rooms')) {
