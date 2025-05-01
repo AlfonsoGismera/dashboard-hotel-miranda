@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { v4 as uuidv4 } from 'uuid';
+import { format } from 'date-fns';
 
 const Overlay = styled.div`
   position:fixed; top:0; left:0; right:0; bottom:0;
@@ -25,13 +25,6 @@ const ImagePreview = styled.img`
 `;
 
 export default function UserModal({ user, isNew, onClose, onSave, setUser, t }) {
-  
-  useEffect(() => {
-    if (isNew && !user.reservationId) {
-      setUser(u => ({ ...u, reservationId: uuidv4() }));
-    }
-  }, [isNew, setUser, user.reservationId]);
-
   return (
     <Overlay onClick={onClose}>
       <ModalBox onClick={e=>e.stopPropagation()}>
@@ -42,8 +35,6 @@ export default function UserModal({ user, isNew, onClose, onSave, setUser, t }) 
           <Label>Reservation ID</Label>
           <Input value={user.reservationId} disabled />
         </Field>
-
-        {user.image && <ImagePreview src={user.image} alt="User Preview" />}
         
         <Field>
           <Label>Image URL</Label>
@@ -73,6 +64,10 @@ export default function UserModal({ user, isNew, onClose, onSave, setUser, t }) 
         <Field>
           <Label>{t.roomType||'Room Type'}</Label>
           <Input value={user.roomType} onChange={e=>setUser(u=>({...u,roomType:e.target.value}))}/>
+        </Field>
+        <Field>
+          <Label>{t.specialRequest||'Room Type'}</Label>
+          <Input value={user.specialRequest} onChange={e=>setUser(u=>({...u,specialRequest:e.target.value}))}/>
         </Field>
 
         <Field>

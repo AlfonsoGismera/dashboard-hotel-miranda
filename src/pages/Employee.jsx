@@ -125,7 +125,11 @@ export default function Employees(){
     setIsNew(true);
     setEditEmp({
       employeeId: `EMP${String(max+1).padStart(3,'0')}`,
-      name:'ADoom Prueba', jobDesk:'Housekeeper', hireDate:'2021-06-15', schedule:["Wed, Thu"], contact:'+34-600-567-890', status:'Active', image:'https://randomuser.me/api/portraits/women/22.jpg'
+      name:'ADoom Prueba', jobDesk:'Housekeeper', hireDate:'2021-06-15', 
+      schedule:["Wed, Thu"], 
+      contact:'+34-600-567-890', 
+      status:'Active', 
+      image:'https://randomuser.me/api/portraits/women/22.jpg'
     });
   }
   function handleSave(){

@@ -1,7 +1,7 @@
 [
   {
     "guest": "Cathyadi Purnomo",
-    "reservationId": "ABC0023456",
+    "reservationId": "U001",
     "orderDate": "2025-11-01T09:21:00Z",
     "checkIn": "2025-11-23T15:00:00Z",
     "checkOut": "2025-11-25T11:00:00Z",
@@ -14,7 +14,7 @@
   },
   {
     "guest": "Angela Smith",
-    "reservationId": "ABC0023457",
+    "reservationId": "U002",
     "orderDate": "2025-11-02T10:15:00Z",
     "checkIn": "2025-11-24T14:00:00Z",
     "checkOut": "2025-11-26T11:00:00Z",
@@ -27,7 +27,7 @@
   },
   {
     "guest": "Olivia Brownlee",
-    "reservationId": "ABC0023458",
+    "reservationId": "U003",
     "orderDate": "2025-11-03T11:30:00Z",
     "checkIn": "2025-11-25T15:00:00Z",
     "checkOut": "2025-11-27T11:00:00Z",
@@ -40,7 +40,7 @@
   },
   {
     "guest": "Hendric Suratman",
-    "reservationId": "ABC0023459",
+    "reservationId": "U004",
     "orderDate": "2025-11-04T12:45:00Z",
     "checkIn": "2025-11-26T14:00:00Z",
     "checkOut": "2025-11-28T11:00:00Z",
@@ -53,7 +53,7 @@
   },
   {
     "guest": "Jiajing Lawrence",
-    "reservationId": "ABC0023460",
+    "reservationId": "U005",
     "orderDate": "2025-11-05T08:20:00Z",
     "checkIn": "2025-11-27T15:00:00Z",
     "checkOut": "2025-11-29T11:00:00Z",
@@ -66,7 +66,7 @@
   },
   {
     "guest": "Kevin Stuart",
-    "reservationId": "ABC0023461",
+    "reservationId": "U006",
     "orderDate": "2025-11-06T14:10:00Z",
     "checkIn": "2025-11-28T15:00:00Z",
     "checkOut": "2025-11-30T11:00:00Z",
@@ -79,7 +79,7 @@
   },
   {
     "guest": "Steven O’Connor",
-    "reservationId": "ABC0023462",
+    "reservationId": "U007",
     "orderDate": "2025-11-07T09:05:00Z",
     "checkIn": "2025-11-29T14:00:00Z",
     "checkOut": "2025-12-01T11:00:00Z",
@@ -92,7 +92,7 @@
   },
   {
     "guest": "Samantha Lee",
-    "reservationId": "ABC0023463",
+    "reservationId": "U008",
     "orderDate": "2025-11-08T13:45:00Z",
     "checkIn": "2025-11-30T15:00:00Z",
     "checkOut": "2025-12-02T11:00:00Z",
@@ -105,7 +105,7 @@
   },
   {
     "guest": "Michael Chan",
-    "reservationId": "ABC0023464",
+    "reservationId": "U009",
     "orderDate": "2025-11-09T10:50:00Z",
     "checkIn": "2025-12-01T14:00:00Z",
     "checkOut": "2025-12-03T11:00:00Z",
@@ -118,7 +118,7 @@
   },
   {
     "guest": "Laura Kim",
-    "reservationId": "ABC0023465",
+    "reservationId": "U010",
     "orderDate": "2025-11-10T11:15:00Z",
     "checkIn": "2025-12-02T15:00:00Z",
     "checkOut": "2025-12-04T11:00:00Z",
@@ -131,7 +131,7 @@
   },
   {
     "guest": "David Nguyen",
-    "reservationId": "ABC0023466",
+    "reservationId": "U011",
     "orderDate": "2025-11-11T12:30:00Z",
     "checkIn": "2025-12-03T14:00:00Z",
     "checkOut": "2025-12-05T11:00:00Z",

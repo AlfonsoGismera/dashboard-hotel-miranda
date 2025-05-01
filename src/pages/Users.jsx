@@ -1,14 +1,14 @@
+// src/pages/Users.jsx
 import React, { useState, useMemo, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styled, { useTheme } from 'styled-components';
-import { format } from 'date-fns';
+import { format, isValid } from 'date-fns';
 import enUS from 'date-fns/locale/en-US';
 import es from 'date-fns/locale/es';
 import { LanguageContext } from '../context/LanguageContext';
 import { fetchUsers, createUser, updateUser, deleteUser } from '../features/users/usersSlice';
 import { FiMoreVertical, FiChevronUp, FiChevronDown } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
-
 import UserModal from '../components/UserModal';
 
 const Page = styled.div`padding:1rem; position:relative;`;
@@ -61,11 +61,23 @@ const PageButton = styled.button`
   &:hover{background:${({theme})=>theme.iconActive};color:#fff;}
 `;
 
+// overlay para special request
+const NoteOverlay = styled.div`
+  position:fixed; top:0; left:0; right:0; bottom:0;
+  background:rgba(0,0,0,0.4); display:flex; justify-content:center; align-items:center; z-index:1500;
+`;
+const NoteBox = styled.div`
+  background:${({theme})=>theme.background}; padding:1rem; border-radius:0.5rem; max-width:300px; position:relative;
+`;
+const CloseNote = styled.button`
+  position:absolute; top:8px; right:8px; border:none; background:transparent; cursor:pointer; font-size:1.2rem;
+`;
+
 export default function Users(){
   const { t, lang } = useContext(LanguageContext);
   const theme = useTheme();
   const dispatch = useDispatch();
-  const users = useSelector(s=>s.users.items);
+  const users = useSelector(s=>s.users.items||[]);
 
   useEffect(()=>{ dispatch(fetchUsers()) },[dispatch]);
 
@@ -75,7 +87,8 @@ export default function Users(){
         [filter,setFilter]=useState('All'),
         [menu,setMenu]=useState({visible:false,x:0,y:0,user:null}),
         [editUser,setEditUser]=useState(null),
-        [isNew,setIsNew]=useState(false);
+        [isNew,setIsNew]=useState(false),
+        [note,setNote]=useState(null);
 
   const statuses = ['All','Pending','Booked','Cancelled','Refunded'];
   const locale = lang==='es'?es:enUS;
@@ -85,6 +98,7 @@ export default function Users(){
     return [...filtered].sort((a,b)=>{
       let av=a[sortField], bv=b[sortField];
       if(sortField.toLowerCase().includes('date')){ av=new Date(av); bv=new Date(bv); }
+      if(!isValid(av)||!isValid(bv)) return 0;
       if(av < bv) return sortAsc?-1:1;
       if(av > bv) return sortAsc?1:-1;
       return 0;
@@ -110,18 +124,14 @@ export default function Users(){
   function handleEdit(){ setIsNew(false); setEditUser(menu.user); closeMenu(); }
 
   function openCreate(){
-    const max = users.reduce((acc,u)=> Math.max(acc, parseInt(u.reservationId.slice(1))),0);
+    const max = users.reduce((acc,u)=> Math.max(acc, parseInt(u.reservationId.slice(1))||0),0);
     setIsNew(true);
     setEditUser({
-      reservationId: 'U'+String(max+1).padStart(3,'0'),
-      guest:'Test Guest',
-      orderDate:new Date().toISOString(),
-      checkIn:new Date().toISOString(),
-      checkOut:new Date().toISOString(),
-      specialRequest:'',
-      roomType:'Standard',
-      status:'Pending',
-      image:'https://randomuser.me/api/portraits/lego/1.jpg'
+      reservationId:'U'+String(max+1).padStart(3,'0'),
+      guest:'', orderDate:new Date().toISOString(),
+      checkIn:new Date().toISOString(), checkOut:new Date().toISOString(),
+      specialRequest:'', roomType:'', status:'Pending',
+      image:'https://randomuser.me/api/portraits/women/23.jpg'
     });
   }
   function handleSave(){
@@ -146,10 +156,10 @@ export default function Users(){
         <Table>
           <thead>
             <tr>
-              {['guest','orderDate','checkIn','checkOut','roomType','status'].map(f=>(
-                <Th key={f} onClick={()=>headerClick(f)}>
+              {['guest','orderDate','checkIn','checkOut','specialRequest','roomType','status'].map(f=>(
+                <Th key={f} onClick={()=>f!=='specialRequest'&&headerClick(f)}>
                   {t[f]||f}
-                  {sortField===f && <SortIcon>{sortAsc?<FiChevronUp/>:<FiChevronDown/>}</SortIcon>}
+                  {sortField===f && f!=='specialRequest' && <SortIcon>{sortAsc?<FiChevronUp/>:<FiChevronDown/>}</SortIcon>}
                 </Th>
               ))}
               <Th></Th>
@@ -160,18 +170,35 @@ export default function Users(){
               <tr key={u.reservationId}>
                 <NameCell>
                   <Link to={`/users/${u.reservationId}`}>
-                    <img src={u.image} alt={u.guest} />
+                    {u.image && <img src={u.image} alt={u.guest}/>}
                   </Link>
                   <div><strong>{u.guest}</strong><br/><small>{u.reservationId}</small></div>
                 </NameCell>
-                <Td>{format(new Date(u.orderDate),'MMM do yyyy',{locale})}<br/><small>{format(new Date(u.orderDate),'hh:mm a',{locale})}</small></Td>
-                <Td>{format(new Date(u.checkIn),'MMM do yyyy',{locale})}<br/><small>{format(new Date(u.checkIn),'hh:mm a',{locale})}</small></Td>
-                <Td>{format(new Date(u.checkOut),'MMM do yyyy',{locale})}<br/><small>{format(new Date(u.checkOut),'hh:mm a',{locale})}</small></Td>
-                <CenterTd><Button $bg={u.status==='Booked'?'green':'red'} $color="#fff">{u.status}</Button></CenterTd>
+                <Td>
+                  {isValid(new Date(u.orderDate))?format(new Date(u.orderDate),'MMM do yyyy',{locale}):'-'}
+                  <br/><small>{isValid(new Date(u.orderDate))?format(new Date(u.orderDate),'hh:mm a',{locale}):''}</small>
+                </Td>
+                <Td>
+                  {isValid(new Date(u.checkIn))?format(new Date(u.checkIn),'MMM do yyyy',{locale}):'-'}
+                  <br/><small>{isValid(new Date(u.checkIn))?format(new Date(u.checkIn),'hh:mm a',{locale}):''}</small>
+                </Td>
+                <Td>
+                  {isValid(new Date(u.checkOut))?format(new Date(u.checkOut),'MMM do yyyy',{locale}):'-'}
+                  <br/><small>{isValid(new Date(u.checkOut))?format(new Date(u.checkOut),'hh:mm a',{locale}):''}</small>
+                </Td>
+                <CenterTd>
+                  <Button $bg={theme.cardBg} $color={theme.text} onClick={()=>setNote(u.specialRequest)}>
+                    {t.viewNotes||'View'}
+                  </Button>
+                </CenterTd>
+                <Td>{u.roomType}</Td>
+                <CenterTd>
+                  <Button $bg={u.status==='Booked'?'green':'red'} $color="#fff">{u.status}</Button>
+                </CenterTd>
                 <CenterTd style={{position:'relative'}}>
                   <FiMoreVertical style={{cursor:'pointer'}} onClick={e=>onMore(e,u)}/>
                   {menu.visible && menu.user===u && (
-                    <Menu x={menu.x} y={menu.y}>
+                    <Menu>
                       <MenuItem onClick={handleEdit}>{t.edit||'Edit'}</MenuItem>
                       <MenuItem onClick={handleDelete}>{t.delete||'Delete'}</MenuItem>
                     </Menu>
@@ -184,15 +211,40 @@ export default function Users(){
       </TableWrapper>
 
       <PaginationBar>
-        <div>{t.entriesInfo.replace('{start}',(page-1)*pageSize+1).replace('{end}',Math.min(page*pageSize,total)).replace('{total}',total)}</div>
+        <div>
+          {t.entriesInfo
+            .replace('{start}',(page-1)*pageSize+1)
+            .replace('{end}',Math.min(page*pageSize,total))
+            .replace('{total}',total)
+          }
+        </div>
         <PageControls>
           <PageButton onClick={()=>page>1&&setPage(page-1)} disabled={page===1}>{t.previous}</PageButton>
-          {Array.from({length:totalPages},(_,i)=>(<PageButton key={i} $active={page===i+1} onClick={()=>setPage(i+1)}>{i+1}</PageButton>))}
+          {Array.from({length:totalPages},(_,i)=><PageButton key={i} $active={page===i+1} onClick={()=>setPage(i+1)}>{i+1}</PageButton>)}
           <PageButton onClick={()=>page<totalPages&&setPage(page+1)} disabled={page===totalPages}>{t.next}</PageButton>
         </PageControls>
       </PaginationBar>
 
-      {editUser && <UserModal user={editUser} isNew={isNew} onClose={()=>setEditUser(null)} onSave={handleSave} setUser={setEditUser} t={t} theme={theme}/>}  
+      {note && (
+        <NoteOverlay onClick={()=>setNote(null)}>
+          <NoteBox onClick={e=>e.stopPropagation()}>
+            <CloseNote onClick={()=>setNote(null)}>×</CloseNote>
+            <p>{note}</p>
+          </NoteBox>
+        </NoteOverlay>
+      )}
+
+      {editUser && (
+        <UserModal
+          user={editUser}
+          isNew={isNew}
+          onClose={()=>setEditUser(null)}
+          onSave={handleSave}
+          setUser={setEditUser}
+          t={t}
+          theme={theme}
+        />
+      )}
     </Page>
   );
 }
