@@ -1,7 +1,6 @@
-// src/components/Header.jsx
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { Menu, Heart, Mail, Bell, MessageSquare,Search } from 'lucide-react';
+import { Menu, Heart, Mail, Bell, MessageSquare, Search } from 'lucide-react';
 import { LanguageContext } from '../context/LanguageContext';
 import { ThemeContext } from '../context/ThemeContext';
 
@@ -98,7 +97,6 @@ const Select = styled.select`
   border: none;
   color: ${({ theme }) => theme.text};  
   cursor: pointer;
-  color
   option {
     color: #000000;                    
   }
@@ -107,9 +105,25 @@ const Select = styled.select`
   }
 `;
 
+const ClearButton = styled.button`
+  background: ${({ theme }) => theme.error || '#E23428'};
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  &:hover { opacity: 0.9; }
+`;
+
 export default function Header() {
   const { t, lang, setLang } = useContext(LanguageContext);
   const { mode, toggleTheme } = useContext(ThemeContext);
+
+  function handleClearStorage() {
+    localStorage.clear();
+    window.location.reload();
+  }
 
   return (
     <Bar>
@@ -119,15 +133,9 @@ export default function Header() {
       </LeftGroup>
 
       <RightGroup>
-        {/* no funcional */}
         <SearchContainer>
-          <SearchIcon>
-            <Search size={20} />
-          </SearchIcon>
-          <SearchInput
-            type="text"
-            placeholder={t.searchPlaceholder || 'Search...'}
-          />
+          <SearchIcon><Search size={20} /></SearchIcon>
+          <SearchInput type="text" placeholder={t.searchPlaceholder || 'Search...'} />
         </SearchContainer>
 
         <IconButton className="active"><Heart size={20} /></IconButton>
@@ -147,21 +155,18 @@ export default function Header() {
           <Badge bg="#212121">!</Badge>
         </IconButton>
 
-        {/* Avatar con URL directa a la imagen */}
         <Avatar
           src="https://plus.unsplash.com/premium_photo-1669077046750-bef49171b059?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGV0cmElMjBoJTIwbG9nb3xlbnwwfHwwfHx8MA%3D%3D"
           alt="User"
         />
 
         <Control>
-          <button onClick={toggleTheme}>
-            {mode === 'light' ? '🌙' : '☀️'}
-          </button>
+          <button onClick={toggleTheme}>{mode === 'light' ? '🌙' : '☀️'}</button>
           <Select value={lang} onChange={e => setLang(e.target.value)}>
             <option value="en">EN</option>
             <option value="es">ES</option>
-
           </Select>
+          <ClearButton onClick={handleClearStorage}>{t.clearData || 'Clear Data'}</ClearButton>
         </Control>
       </RightGroup>
     </Bar>
