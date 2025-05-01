@@ -100,7 +100,6 @@ export default function Guests(){
       )}
       <Header>
         <Tabs>{statuses.map(s=>(<Tab key={s} active={filter===s} onClick={()=>{setFilter(s);setPage(1);}}>{t[s.toLowerCase()]||s}</Tab>))}</Tabs>
-        <EntriesInfo>{t.entriesInfo.replace('{start}',start).replace('{end}',end).replace('{total}',total)}</EntriesInfo>
       </Header>
       <TableWrapper>
         <Table>
