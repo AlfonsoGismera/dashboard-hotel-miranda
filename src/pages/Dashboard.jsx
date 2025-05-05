@@ -11,6 +11,8 @@ const PageWrapper = styled.div`
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
+  background-color: ${({ theme }) => theme.pageBackground};
+  
 `;
 
 const TopCards = styled.div`

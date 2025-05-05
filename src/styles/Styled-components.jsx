@@ -3,17 +3,26 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
     box-sizing: border-box;
+    
   }
 
-  body, html, #root {
+  body,main, html, #root {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    background: ${({ theme }) => theme.background};
+    background: ${({ theme }) => theme.pageBackground};
     color: ${({ theme }) => theme.text};
     font-family: 'Poppins', sans-serif;
   }
+  Table{
+    background: ${({ theme }) => theme.cardBg}; 
+    border-radius: 0.5rem;
+  }
+  button {
+    color: ${({ theme }) => theme.text};
+
+  }  
 
 
   .react-calendar {

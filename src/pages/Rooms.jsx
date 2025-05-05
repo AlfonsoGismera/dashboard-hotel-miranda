@@ -15,7 +15,7 @@ const Tab = styled.div`
   color: ${({ $active, theme }) => $active ? theme.text : theme.subtitle};
 `;
 const AddButton = styled.button`
-  background: ${({ theme }) => theme.primary}; color:#fff; border:none;
+  background: ${({ theme }) => theme.primary};  color: ${({ theme }) => theme.text};  border:none;
   padding:0.5rem 1rem; border-radius:0.25rem; cursor:pointer;
   &:hover { opacity:0.9; }
 `;
@@ -42,7 +42,7 @@ const PageControls = styled.div`display:flex; gap:0.5rem;`;
 const PageButton = styled.button`
   padding:0.4rem 0.8rem; border:none; border-radius:0.25rem; cursor:pointer;
   background:${({ $active, theme }) => $active ? theme.primary : 'transparent'};
-  color:${({ $active, theme }) => $active ? '#fff' : theme.text};
+  color:${({ $active, theme }) => $active ? ' color: ${({ theme }) => theme.text};' : theme.text};
   &:hover{background:${({ theme }) => theme.iconActive}; color:#fff;}
 `;
 
