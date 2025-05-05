@@ -34,7 +34,7 @@ const NameCell = styled(Td)`
 const Button = styled.button`
   padding:0.3rem 0.6rem; border:none; border-radius:0.25rem; cursor:pointer; font-size:0.9rem;
   background:${({ $bg, theme }) => $bg || theme.cardBg}; color:${({ $color, theme }) => $color || theme.text};
-  &:hover{ background:${({ $hoverBg, theme }) => $hoverBg || theme.iconActive}; color:#fff; }
+  &:hover{ background:${({ $hoverBg, theme }) => $hoverBg || theme.iconActive}; color: ${({ theme }) => theme.text}; }
 `;
 
 const PaginationBar = styled.div`display:flex; justify-content:space-between; align-items:center; margin-top:1rem;`;

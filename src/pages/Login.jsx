@@ -49,8 +49,8 @@ const Input = styled.input`
 
 const Button = styled.button`
   padding: 0.75rem;
-  background: ${({ theme }) => theme.primary};
-  color: #fff;
+  background: ${({ theme }) => theme.pageBackground};
+  color: ${({ theme }) => theme.text};
   font-size: 1rem;
   font-weight: 600;
   border: none;
