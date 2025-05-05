@@ -19,7 +19,7 @@ const Tab = styled.div`
 `;
 const AddButton = styled.button`
   background: ${({ theme }) => theme.primary};
-  color: #fff;
+  color: ${({ theme }) => theme.text};
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
@@ -31,7 +31,6 @@ const TableWrapper = styled.div`overflow-x:auto;`;
 const Table = styled.table`width:100%; border-collapse:collapse;`;
 const Th = styled.th`
   position:relative; padding:0.75rem;
-  border-bottom:1px solid ${({ theme }) => theme.borderColor};
   cursor:pointer; text-align:left;
 `;
 const SortIcon = styled.span`
@@ -39,7 +38,7 @@ const SortIcon = styled.span`
   transform:translateY(-50%); font-size:0.75rem;
 `;
 const Td = styled.td`
-  padding:0.75rem; border-bottom:1px solid ${({ theme }) => theme.borderColor};
+  padding:0.75rem;
   vertical-align:middle;
 `;
 const CenterTd = styled(Td)`text-align:center;`;
@@ -50,19 +49,17 @@ const NameCell = styled(Td)`
 `;
 
 const Button = styled.button`
-  padding:0.3rem 0.6rem; border:none; border-radius:0.25rem; cursor:pointer;
-  font-size:0.9rem;
-  background:${({ $bg, theme }) => $bg||theme.cardBg};
-  color:${({ $color, theme }) => $color||theme.text};
-  &:hover{ background:${({ $hoverBg, theme }) => $hoverBg||theme.iconActive}; color:#fff; }
+  padding:0.3rem 0.6rem; border:none; border-radius:0.25rem; cursor:pointer; font-size:0.9rem;
+  background:${({ $bg, theme }) => $bg || theme.cardBg}; color:${({ $color, theme }) => $color || theme.text};
+  &:hover{ background:${({ $hoverBg, theme }) => $hoverBg || theme.iconActive}; color: ${({ theme }) => theme.text}; }
 `;
 
 const PaginationBar = styled.div`display:flex; justify-content:space-between; align-items:center; margin-top:1rem;`;
 const PageControls = styled.div`display:flex; gap:0.5rem;`;
 const PageButton = styled.button`
   padding:0.4rem 0.8rem; border:none; border-radius:0.25rem; cursor:pointer;
-  background:${({ $active, theme }) => $active? theme.primary : 'transparent'};
-  color:${({ $active, theme }) => $active? '#fff' : theme.text};
+  background:${({ $active, theme }) => $active ? theme.primary : 'transparent'};
+  color:${({ $active, theme }) => $active ? ' color: ${({ theme }) => theme.text};' : theme.text};
   &:hover{background:${({ theme }) => theme.iconActive}; color:#fff;}
 `;
 

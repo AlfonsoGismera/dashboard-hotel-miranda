@@ -15,14 +15,14 @@ export const lightTheme = {
 export const darkTheme = {
   background: '#333232',
   text: '#FFFFFF',
-  primary: '#202020',
+  primary: '#333232',
   cardBg: '#00000005',
-  borderColor: '#00000005',
+  borderColor: '#EBEBEB',
   subtitle: '#799283',
   chart: {
     barPrimary: '#135846',
     barSecondary: '#E23428'
   },
   iconActive: '#5AD07A',
-  pageBackground: '#252525',
+  pageBackground: '#202020',
 };

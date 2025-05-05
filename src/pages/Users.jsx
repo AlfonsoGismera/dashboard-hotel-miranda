@@ -21,7 +21,7 @@ const Tab = styled.div`
 `;
 const AddButton = styled.button`
   background: ${({ theme }) => theme.primary};
-  color: #fff;
+  color: ${({ theme }) => theme.text};
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
@@ -32,7 +32,7 @@ const TableWrapper = styled.div`overflow-x:auto;`;
 const Table = styled.table`width:100%; border-collapse:collapse;`;
 const Th = styled.th`position:relative; padding:0.75rem; border-bottom:1px solid ${({theme})=>theme.borderColor}; text-align:left; cursor:pointer; white-space:nowrap;`;
 const SortIcon = styled.span`position:absolute; right:8px; top:50%; transform:translateY(-50%); font-size:0.75rem;`;
-const Td = styled.td`padding:0.75rem; border-bottom:1px solid ${({theme})=>theme.borderColor}; vertical-align:middle; white-space:nowrap;`;
+const Td = styled.td`padding:0.75rem;  vertical-align:middle; white-space:nowrap;`;
 const CenterTd = styled(Td)`text-align:center;`;
 const NameCell = styled(Td)`display:flex; align-items:center; gap:0.5rem;
   img { width:40px; height:40px; border-radius:10%; object-fit:cover; }
@@ -40,7 +40,16 @@ const NameCell = styled(Td)`display:flex; align-items:center; gap:0.5rem;
 const Button = styled.button`
   padding:0.3rem 0.6rem; border:none; border-radius:0.25rem; cursor:pointer; font-size:0.9rem;
   background:${({ $bg, theme }) => $bg || theme.cardBg}; color:${({ $color, theme }) => $color || theme.text};
-  &:hover{background:${({ $hoverBg, theme }) => $hoverBg || theme.iconActive}; color:#fff;}
+  &:hover{ background:${({ $hoverBg, theme }) => $hoverBg || theme.iconActive}; color: ${({ theme }) => theme.text}; }
+`;
+
+const PaginationBar = styled.div`display:flex; justify-content:space-between; align-items:center; margin-top:1rem;`;
+const PageControls = styled.div`display:flex; gap:0.5rem;`;
+const PageButton = styled.button`
+  padding:0.4rem 0.8rem; border:none; border-radius:0.25rem; cursor:pointer;
+  background:${({ $active, theme }) => $active ? theme.primary : 'transparent'};
+  color:${({ $active, theme }) => $active ? ' color: ${({ theme }) => theme.text};' : theme.text};
+  &:hover{background:${({ theme }) => theme.iconActive}; color:#fff;}
 `;
 const Menu = styled.ul`
   position: absolute;
@@ -53,13 +62,7 @@ const Menu = styled.ul`
   list-style:none;
 `;
 const MenuItem = styled.li`padding:0.5rem 1rem; cursor:pointer; &:hover{background:${({theme})=>theme.iconActive};color:#fff;}`;
-const PaginationBar = styled.div`display:flex; justify-content:space-between; align-items:center; margin-top:1rem;`;
-const PageControls = styled.div`display:flex; gap:0.5rem;`;
-const PageButton = styled.button`
-  padding:0.4rem 0.8rem; border:none; border-radius:0.25rem; cursor:pointer;
-  background:${({$active,theme})=>$active?theme.primary:'transparent'}; color:${({$active,theme})=>$active?'#fff':theme.text};
-  &:hover{background:${({theme})=>theme.iconActive};color:#fff;}
-`;
+
 
 // overlay para special request
 const NoteOverlay = styled.div`

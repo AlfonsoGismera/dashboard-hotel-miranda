@@ -15,7 +15,7 @@ const data = [
 ];
 
 const Wrapper = styled.div`
-  background: ${({ theme }) => theme.cardBg};
+ background: ${({ theme }) => theme.background};
   border-radius: 0.5rem;
   padding: 1rem;
   border: 1px solid ${({ theme }) => theme.borderColor};

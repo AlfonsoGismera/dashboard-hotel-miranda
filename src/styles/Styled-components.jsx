@@ -16,9 +16,16 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
   }
   Table{
-    background: ${({ theme }) => theme.cardBg}; 
+    background: ${({ theme }) => theme.primary}; 
     border-radius: 0.5rem;
   }
+
+    Tr{
+    background: ${({ theme }) => theme.primary}; 
+    border-bottom:1px solid ${({ theme }) => theme.borderColor};
+  }
+
+
   button {
     color: ${({ theme }) => theme.text};
 

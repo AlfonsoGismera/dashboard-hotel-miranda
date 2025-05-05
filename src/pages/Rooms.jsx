@@ -24,7 +24,7 @@ const TableWrapper = styled.div`overflow-x:auto;`;
 const Table = styled.table`width:100%; border-collapse:collapse;`;
 const Th = styled.th`position:relative; padding:0.75rem; border-bottom:1px solid ${({ theme }) => theme.borderColor}; cursor:pointer; text-align:left;`;
 const SortIcon = styled.span`position:absolute; right:8px; top:50%; transform:translateY(-50%); font-size:0.75rem;`;
-const Td = styled.td`padding:0.75rem; border-bottom:1px solid ${({ theme }) => theme.borderColor}; vertical-align:middle;`;
+const Td = styled.td`padding:0.75rem; vertical-align:middle;`;
 const CenterTd = styled(Td)`text-align:center;`;
 const NameCell = styled(Td)`
   display:flex; align-items:center; gap:1rem;
