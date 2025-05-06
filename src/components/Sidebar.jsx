@@ -74,8 +74,8 @@ const LinkItem = styled(NavLink)`
   text-decoration: none;
   border-radius: 0.25rem;
   &.active, &:hover {
-    background: ${({ theme }) => theme.iconActive};
-    color: #fff;
+    border-left: 0.2rem solid #E23428;
+    color:#E23428;
   }
 `;
 
