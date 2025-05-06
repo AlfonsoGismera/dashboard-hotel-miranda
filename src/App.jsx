@@ -16,7 +16,11 @@ import 'react-calendar/dist/Calendar.css';
 
 function PrivateRoute({ children }) {
   const { user } = useContext(AuthContext);
-  return user ? children : <Navigate to="/login" replace />;
+  console.log('PrivateRoute is running');
+  console.log('User in PrivateRoute:', user);
+  const shouldRedirect = !user;
+  console.log('Should redirect:', shouldRedirect);
+  return shouldRedirect ? <Navigate to="/login" replace /> : children;
 }
 
 export default function App() {

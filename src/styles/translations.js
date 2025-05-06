@@ -46,6 +46,7 @@ const translations = {
     page: "Page",
 
     // Login page
+    login: "Login page",
     username: "Username",
     password: "Password",
     signIn: "Sign In",
@@ -158,6 +159,7 @@ const translations = {
     photos: "Fotos",
 
     // Login page
+    login: "Página de inicio de sesión",
     username: "Usuario",
     password: "Contraseña",
     signIn: "Iniciar sesión",
