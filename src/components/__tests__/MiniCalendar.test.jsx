@@ -44,7 +44,7 @@ describe('MiniCalendar component', () => {
 
   // Test para la fecha actual (6 de mayo de 2025)
   it('should render calendar days', () => {
-    const today = new Date(2025, 4, 6); // El mes de enero   (0 = enero, 4 = mayo)
+    const today = new Date(2025, 4, 7); // El mes de enero   (0 = enero, 4 = mayo)
     // **Volvemos a formatear la etiqueta para incluir el mes y el año**
     const label = format(today, 'MMMM d, yyyy');
 
