@@ -25,7 +25,6 @@ const GlobalStyle = createGlobalStyle`
     border-bottom:1px solid ${({ theme }) => theme.borderColor};
   }
 
-
   button {
     color: ${({ theme }) => theme.text};
 
