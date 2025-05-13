@@ -287,26 +287,26 @@ const Rooms: React.FC<RoomsProps> = () => {
   };
 
   const openCreate = () => {
-  console.log("Contenido del array 'rooms':", rooms); // Paso 1: Ver el array completo
+  //  console.log("Contenido del array 'rooms':", rooms); 
 
   const mappedIds = rooms.map(room => {
-    const match = room.roomId.match(/^R-(\d+)$/);
+    const match = room.roomId.match(/^R(\d+)$/);
     const parsedId = match ? parseInt(match[1], 10) : null;
-    console.log(`Room ID: ${room.roomId}, Match: ${match}, Parsed ID: ${parsedId}`); // Paso 2: Ver cada ID, la coincidencia y el resultado del parse
+    // console.log(`Room ID: ${room.roomId}, Match: ${match}, Parsed ID: ${parsedId}`); 
     return parsedId;
   });
 
-  console.log("Array 'mappedIds' después del map:", mappedIds); // Paso 3: Ver el array después del map
+  console.log("Array 'mappedIds' después del map:", mappedIds); 
 
   const existingIds = mappedIds.filter(id => id !== null);
-  console.log("Array 'existingIds' después del filter:", existingIds); // Paso 4: Ver el array final de IDs válidos
+  console.log("Array 'existingIds' después del filter:", existingIds);
 
   let nextIdNumber = 1;
   if (existingIds.length > 0) {
     nextIdNumber = Math.max(...existingIds) + 1;
   }
 
-  const id = 'R-' + String(nextIdNumber).padStart(3, '0');
+  const id = 'R' + String(nextIdNumber).padStart(3, '0');
     setIsNew(true);
     setEditRoom({
       roomId: id,
