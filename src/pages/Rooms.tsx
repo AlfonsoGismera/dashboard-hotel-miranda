@@ -314,7 +314,7 @@ const Rooms: React.FC<RoomsProps> = () => {
       bedType: 'Queen',
       roomFloor: '1st',
       facilities: ['WiFi', 'TV', 'Air Conditioning', 'Mini Bar'],
-      rate: '120',
+      rate: '$100/Night',
       status: 'Available',
       image:
         'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWx8ZW58MHx8MHx8fDA%3D',
@@ -533,14 +533,14 @@ const Rooms: React.FC<RoomsProps> = () => {
             </Field>
             <Actions>
               <Button
-                $bg={theme.subtitle}
+                $bg= "#c25c5c" 
                 $color="#fff"
                 onClick={() => setEditRoom(null)}
               >
                 {t.cancel || 'Cancel'}
               </Button>
               <Button
-                $bg={theme.primary}
+                $bg={theme.subtitle}
                 $color="#fff"
                 onClick={handleSave}
               >

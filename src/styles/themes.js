@@ -10,7 +10,7 @@ export const lightTheme = {
     barSecondary: '#E23428'       
   },
   iconActive: '#434dbf',
-  pageBackground: '#EBEBEB',          
+  pageBackground: '#EBEBEB',   
 };
 export const darkTheme = {
   background: '#333232',

@@ -17,7 +17,6 @@ export interface Theme {
   pageBackground: string;
 }
 
-// Esto es necesario para que styled-components reconozca nuestra Theme interface
 declare module 'styled-components' {
   export interface DefaultTheme extends Theme {}
 }

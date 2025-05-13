@@ -81,8 +81,8 @@ export default function UserModal({ user, isNew, onClose, onSave, setUser, t }) 
         </Field>
 
         <Actions>
-          <Button bg="#ccc" color="#000" onClick={onClose}>{t.cancel||'Cancel'}</Button>
-          <Button onClick={onSave}>{t.save||'Save'}</Button>
+          <Button bg="#c25c5c" color="#fff" onClick={onClose}>{t.cancel||'Cancel'}</Button>
+          <Button bg="#799283" color="#fff"  onClick={onSave}>{t.save||'Save'}</Button>
         </Actions>
       </ModalBox>
     </Overlay>

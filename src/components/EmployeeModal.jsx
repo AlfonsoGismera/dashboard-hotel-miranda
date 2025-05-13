@@ -25,10 +25,10 @@ export default function EmployeeModal({ employee, isNew, onClose, onSave, setEmp
         <Field><Label>{t.contact}</Label><Input value={employee.contact} onChange={e=>setEmployee({...employee, contact:e.target.value})}/></Field>
         <Field><Label>{t.status}</Label><select value={employee.status} onChange={e=>setEmployee({...employee, status:e.target.value})} style={{width:'100%',padding:'0.5rem',borderRadius:'4px'}}>
           <option value="Active">{t.active}</option><option value="Inactive">{t.inactive}</option>
-        </select></Field>
+        </select></Field> 
         <Actions>
-          <Button onClick={onClose} bg={theme.subtitle} color="#fff">{t.cancel}</Button>
-          <Button onClick={onSave} bg={theme.primary} color="#fff">{t.save}</Button>
+          <Button onClick={onClose} bg="#c25c5c" color="#fff">{t.cancel}</Button>
+          <Button onClick={onSave} bg={theme.subtitle} color="#fff">{t.save}</Button>
         </Actions>
       </ModalBox>
     </Overlay>
