@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES6", 
+    "module": "ESNext",
+    "lib": ["DOM", "ESNext"],
+    "jsx": "react-jsx",
+    "rootDir": "src",        // carpeta raíz de tu código fuente
+    "outDir": "dist",        // carpeta donde TS dejará los .js compilados 
+    "strict": true, 
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "noImplicitAny": false,
+    "allowJs": true
+
+  },
+"include": [    "src/**/*","src/**/*.js","src/**/*.jsx"],
+  "exclude": ["node_modules", "dist"]
+}
