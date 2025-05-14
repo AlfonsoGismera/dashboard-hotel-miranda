@@ -1,4 +1,5 @@
 import 'styled-components';
+import 'themes'
 
 interface ChartColors {
   barPrimary: string;

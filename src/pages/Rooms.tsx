@@ -1,19 +1,21 @@
-import React, { useState, useMemo, useContext, useEffect } from 'react';
-import styled, { useTheme } from 'styled-components';
-import { useDispatch, useSelector } from 'react-redux';
-import { LanguageContext } from '../context/LanguageContext';
+import React, { useState, useMemo, useContext, useEffect } from "react";
+import styled, { useTheme } from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
+import { LanguageContext } from "../context/LanguageContext";
 import {
   fetchRooms,
   createRoom,
   updateRoom,
-  deleteRoom,
-} from '../features/rooms/roomsSlice';
-import { FiMoreVertical, FiChevronUp, FiChevronDown } from 'react-icons/fi';
-import { IoClose } from 'react-icons/io5';
-import { Room, MenuState, RoomsProps } from '../types/rooms'; // Importa las interfaces
-import { UnknownAction } from 'redux';
+  deleteRoom,} from "../features/rooms/roomsSlice";
+import { FiMoreVertical, FiChevronUp, FiChevronDown } from "react-icons/fi";
+import { IoClose } from "react-icons/io5";
+import { Room, MenuState, RoomsProps } from "../types/rooms"; // Importa las interfaces
+import { UnknownAction } from "redux";
 
-const Page = styled.div`padding:1rem; position: relative;`;
+const Page = styled.div`
+  padding: 1rem;
+  position: relative;
+`;
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
@@ -30,7 +32,7 @@ const Tab = styled.div<{ $active?: boolean }>`
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-bottom: 3px solid
-    ${({ $active, theme }) => ($active ? theme.iconActive : 'transparent')};
+    ${({ $active, theme }) => ($active ? theme.iconActive : "transparent")};
   color: ${({ $active, theme }) => ($active ? theme.text : theme.subtitle)};
 `;
 const AddButton = styled.button`
@@ -45,7 +47,9 @@ const AddButton = styled.button`
   }
 `;
 
-const TableWrapper = styled.div`overflow-x: auto;`;
+const TableWrapper = styled.div`
+  overflow-x: auto;
+`;
 const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
@@ -68,7 +72,9 @@ const Td = styled.td`
   padding: 0.75rem;
   vertical-align: middle;
 `;
-const CenterTd = styled(Td)`text-align: center;`;
+const CenterTd = styled(Td)`
+  text-align: center;
+`;
 const NameCell = styled(Td)`
   display: flex;
   align-items: center;
@@ -81,7 +87,11 @@ const NameCell = styled(Td)`
   }
 `;
 
-const Button = styled.button<{ $bg?: string; $color?: string; $hoverBg?: string }>`
+const Button = styled.button<{
+  $bg?: string;
+  $color?: string;
+  $hoverBg?: string;
+}>`
   padding: 0.3rem 0.6rem;
   border: none;
   border-radius: 0.25rem;
@@ -110,9 +120,10 @@ const PageButton = styled.button<{ $active?: boolean }>`
   border: none;
   border-radius: 0.25rem;
   cursor: pointer;
-  background: ${({ $active, theme }) => ($active ? theme.primary : 'transparent')};
+  background: ${({ $active, theme }) =>
+    $active ? theme.primary : "transparent"};
   color: ${({ $active, theme }) =>
-    $active ? ' color: ${({ theme }) => theme.text};' : theme.text};
+    $active ? " color: ${({ theme }) => theme.text};" : theme.text};
   &:hover {
     background: ${({ theme }) => theme.iconActive};
     color: #fff;
@@ -168,7 +179,9 @@ const CloseIcon = styled(IoClose)`
   cursor: pointer;
   color: ${({ theme }) => theme.subtitle};
 `;
-const Field = styled.div`margin-bottom: 1rem;`;
+const Field = styled.div`
+  margin-bottom: 1rem;
+`;
 const Label = styled.label`
   display: block;
   font-weight: bold;
@@ -188,21 +201,21 @@ const Actions = styled.div`
 
 const initialMenuState: MenuState = { visible: false, room: null };
 const initialEditRoomState: Room = {
-  roomId: '',
-  roomName: '',
-  bedType: '',
-  roomFloor: '',
+  roomId: "",
+  roomName: "",
+  bedType: "",
+  roomFloor: "",
   facilities: [],
-  rate: '',
-  status: 'Available',
-  image: '',
+  rate: "",
+  status: "Available",
+  image: "",
 };
 
 interface RoomsState {
   page: number;
   sortField: keyof Room;
   sortAsc: boolean;
-  filter: 'All' | 'Available' | 'Booked';
+  filter: "All" | "Available" | "Booked";
   menu: MenuState;
   editRoom: Room | null;
   isNew: boolean;
@@ -219,37 +232,41 @@ const Rooms: React.FC<RoomsProps> = () => {
   }, [dispatch]);
 
   const [page, setPage] = useState<number>(1);
-  const [sortField, setSortField] = useState<keyof Room>('roomName');
+  const [sortField, setSortField] = useState<keyof Room>("roomName");
   const [sortAsc, setSortAsc] = useState<boolean>(true);
-  const [filter, setFilter] = useState<'All' | 'Available' | 'Booked'>('All');
+  const [filter, setFilter] = useState<"All" | "Available" | "Booked">("All");
   const [menu, setMenu] = useState<MenuState>(initialMenuState);
   const [editRoom, setEditRoom] = useState<Room | null>(null);
   const [isNew, setIsNew] = useState<boolean>(false);
 
   const pageSize = 10;
-  const statuses: ('All' | 'Available' | 'Booked')[] = [
-    'All',
-    'Available',
-    'Booked',
+  const statuses: ("All" | "Available" | "Booked")[] = [
+    "All",
+    "Available",
+    "Booked",
   ];
 
-  const filtered = useMemo(() =>
-    rooms.filter(r => filter === 'All' || r.status === filter)
-  ,[rooms, filter]);
-  const sorted = useMemo(() =>
-    [...filtered].sort((a, b) => {
-      let av = a[sortField];
-      let bv = b[sortField];
-      if (av < bv) return sortAsc ? -1 : 1;
-      if (av > bv) return sortAsc ? 1 : -1;
-      return 0;
-    })
-  ,[filtered, sortField, sortAsc]);
+  const filtered = useMemo(
+    () => rooms.filter((r) => filter === "All" || r.status === filter),
+    [rooms, filter]
+  );
+  const sorted = useMemo(
+    () =>
+      [...filtered].sort((a, b) => {
+        let av = a[sortField];
+        let bv = b[sortField];
+        if (av < bv) return sortAsc ? -1 : 1;
+        if (av > bv) return sortAsc ? 1 : -1;
+        return 0;
+      }),
+    [filtered, sortField, sortAsc]
+  );
   const total = sorted.length;
   const totalPages = Math.ceil(total / pageSize);
-  const paged = useMemo(() =>
-    sorted.slice((page - 1) * pageSize, page * pageSize)
-  ,[sorted, page]);
+  const paged = useMemo(
+    () => sorted.slice((page - 1) * pageSize, page * pageSize),
+    [sorted, page]
+  );
   const start = (page - 1) * pageSize + 1;
   const end = Math.min(page * pageSize, total);
 
@@ -268,7 +285,7 @@ const Rooms: React.FC<RoomsProps> = () => {
   };
 
   const closeMenu = () => {
-    setMenu(prevMenu => ({ ...prevMenu, visible: false }));
+    setMenu((prevMenu) => ({ ...prevMenu, visible: false }));
   };
 
   const handleDelete = () => {
@@ -287,37 +304,37 @@ const Rooms: React.FC<RoomsProps> = () => {
   };
 
   const openCreate = () => {
-  //  console.log("Contenido del array 'rooms':", rooms); 
+    //  console.log("Contenido del array 'rooms':", rooms);
 
-  const mappedIds = rooms.map(room => {
-    const match = room.roomId.match(/^R(\d+)$/);
-    const parsedId = match ? parseInt(match[1], 10) : null;
-    // console.log(`Room ID: ${room.roomId}, Match: ${match}, Parsed ID: ${parsedId}`); 
-    return parsedId;
-  });
+    const mappedIds = rooms.map((room) => {
+      const match = room.roomId.match(/^R(\d+)$/);
+      const parsedId = match ? parseInt(match[1], 10) : null;
+      // console.log(`Room ID: ${room.roomId}, Match: ${match}, Parsed ID: ${parsedId}`);
+      return parsedId;
+    });
 
-  console.log("Array 'mappedIds' después del map:", mappedIds); 
+    console.log("Array 'mappedIds' después del map:", mappedIds);
 
-  const existingIds = mappedIds.filter(id => id !== null);
-  console.log("Array 'existingIds' después del filter:", existingIds);
+    const existingIds = mappedIds.filter((id) => id !== null);
+    console.log("Array 'existingIds' después del filter:", existingIds);
 
-  let nextIdNumber = 1;
-  if (existingIds.length > 0) {
-    nextIdNumber = Math.max(...existingIds) + 1;
-  }
+    let nextIdNumber = 1;
+    if (existingIds.length > 0) {
+      nextIdNumber = Math.max(...existingIds) + 1;
+    }
 
-  const id = 'R' + String(nextIdNumber).padStart(3, '0');
+    const id = "R" + String(nextIdNumber).padStart(3, "0");
     setIsNew(true);
     setEditRoom({
       roomId: id,
-      roomName: 'Example Room',
-      bedType: 'Queen',
-      roomFloor: '1st',
-      facilities: ['WiFi', 'TV', 'Air Conditioning', 'Mini Bar'],
-      rate: '$100/Night',
-      status: 'Available',
+      roomName: "Example Room",
+      bedType: "Queen",
+      roomFloor: "1st",
+      facilities: ["WiFi", "TV", "Air Conditioning", "Mini Bar"],
+      rate: "$100/Night",
+      status: "Available",
       image:
-        'https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWx8ZW58MHx8MHx8fDA%3D',
+        "https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWx8ZW58MHx8MHx8fDA%3D",
     });
   };
 
@@ -336,7 +353,7 @@ const Rooms: React.FC<RoomsProps> = () => {
     <Page onClick={closeMenu}>
       <Header>
         <Tabs>
-          {statuses.map(s => (
+          {statuses.map((s) => (
             <Tab
               key={s}
               $active={filter === s}
@@ -349,7 +366,7 @@ const Rooms: React.FC<RoomsProps> = () => {
             </Tab>
           ))}
         </Tabs>
-        <AddButton onClick={openCreate}>{t.addRoom || 'Add Room'}</AddButton>
+        <AddButton onClick={openCreate}>{t.addRoom || "Add Room"}</AddButton>
       </Header>
 
       <TableWrapper>
@@ -357,12 +374,21 @@ const Rooms: React.FC<RoomsProps> = () => {
           <thead>
             <tr>
               {(
-                ['roomName', 'bedType', 'roomFloor', 'facilities', 'rate', 'status'] as (keyof Room)[]
-              ).map(f => (
+                [
+                  "roomName",
+                  "bedType",
+                  "roomFloor",
+                  "facilities",
+                  "rate",
+                  "status",
+                ] as (keyof Room)[]
+              ).map((f) => (
                 <Th key={f} onClick={() => headerClick(f)}>
                   {t[f] || f}
                   {sortField === f && (
-                    <SortIcon>{sortAsc ? <FiChevronUp /> : <FiChevronDown />}</SortIcon>
+                    <SortIcon>
+                      {sortAsc ? <FiChevronUp /> : <FiChevronDown />}
+                    </SortIcon>
                   )}
                 </Th>
               ))}
@@ -382,26 +408,28 @@ const Rooms: React.FC<RoomsProps> = () => {
                 </NameCell>
                 <Td>{r.bedType}</Td>
                 <Td>{r.roomFloor}</Td>
-                <Td>{r.facilities.join(', ')}</Td>
+                <Td>{r.facilities.join(", ")}</Td>
                 <Td>{r.rate}</Td>
                 <CenterTd>
                   <Button
-                    $bg={r.status === 'Available' ? 'green' : 'red'}
+                    $bg={r.status === "Available" ? "green" : "red"}
                     $color="#fff"
                   >
                     {t[r.status.toLowerCase()] || r.status}
                   </Button>
                 </CenterTd>
-                <CenterTd style={{ position: 'relative' }}>
+                <CenterTd style={{ position: "relative" }}>
                   <FiMoreVertical
-                    style={{ cursor: 'pointer' }}
-                    onClick={e => onMore(e, r)}
+                    style={{ cursor: "pointer" }}
+                    onClick={(e) => onMore(e, r)}
                   />
                   {menu.visible && menu.room === r && (
                     <Menu y={menu.y}>
-                      <MenuItem onClick={handleEdit}>{t.edit || 'Edit'}</MenuItem>
+                      <MenuItem onClick={handleEdit}>
+                        {t.edit || "Edit"}
+                      </MenuItem>
                       <MenuItem onClick={handleDelete}>
-                        {t.delete || 'Delete'}
+                        {t.delete || "Delete"}
                       </MenuItem>
                     </Menu>
                   )}
@@ -414,7 +442,10 @@ const Rooms: React.FC<RoomsProps> = () => {
 
       <PaginationBar>
         <div>
-          {t.entriesInfo?.replace('{start}', String(start)).replace('{end}', String(end)).replace('{total}', String(total))}
+          {t.entriesInfo
+            ?.replace("{start}", String(start))
+            .replace("{end}", String(end))
+            .replace("{total}", String(total))}
         </div>
         <PageControls>
           <PageButton
@@ -443,10 +474,10 @@ const Rooms: React.FC<RoomsProps> = () => {
 
       {editRoom && (
         <Overlay>
-          <Modal onClick={e => e.stopPropagation()}>
+          <Modal onClick={(e) => e.stopPropagation()}>
             <CloseIcon size={20} onClick={() => setEditRoom(null)} />
             <h3>
-              {isNew ? t.addRoom || 'Add Room' : t.edit || 'Edit'}{' '}
+              {isNew ? t.addRoom || "Add Room" : t.edit || "Edit"}{" "}
               {editRoom.roomName}
             </h3>
             <Field>
@@ -457,8 +488,10 @@ const Rooms: React.FC<RoomsProps> = () => {
               <Label>Room Name</Label>
               <Input
                 value={editRoom.roomName}
-                onChange={e =>
-                  setEditRoom(r => r ? { ...r, roomName: e.target.value } : r)
+                onChange={(e) =>
+                  setEditRoom((r) =>
+                    r ? { ...r, roomName: e.target.value } : r
+                  )
                 }
               />
             </Field>
@@ -466,8 +499,10 @@ const Rooms: React.FC<RoomsProps> = () => {
               <Label>Bed Type</Label>
               <Input
                 value={editRoom.bedType}
-                onChange={e =>
-                  setEditRoom(r =>  r ? ({ ...r, bedType: e.target.value }): r)
+                onChange={(e) =>
+                  setEditRoom((r) =>
+                    r ? { ...r, bedType: e.target.value } : r
+                  )
                 }
               />
             </Field>
@@ -475,20 +510,26 @@ const Rooms: React.FC<RoomsProps> = () => {
               <Label>Floor</Label>
               <Input
                 value={editRoom.roomFloor}
-                onChange={e =>
-                  setEditRoom(r => r ? ({ ...r, roomFloor: e.target.value }): r)
+                onChange={(e) =>
+                  setEditRoom((r) =>
+                    r ? { ...r, roomFloor: e.target.value } : r
+                  )
                 }
               />
             </Field>
             <Field>
               <Label>Facilities (comma)</Label>
               <Input
-                value={editRoom.facilities.join(',')}
-                onChange={e =>
-                  setEditRoom(r =>r ?  ({
-                    ...r,
-                    facilities: e.target.value.split(','),
-                  }): r)
+                value={editRoom.facilities.join(",")}
+                onChange={(e) =>
+                  setEditRoom((r) =>
+                    r
+                      ? {
+                          ...r,
+                          facilities: e.target.value.split(","),
+                        }
+                      : r
+                  )
                 }
               />
             </Field>
@@ -496,8 +537,8 @@ const Rooms: React.FC<RoomsProps> = () => {
               <Label>Rate</Label>
               <Input
                 value={editRoom.rate}
-                onChange={e =>
-                  setEditRoom(r =>r ?  ({ ...r, rate: e.target.value }): r)
+                onChange={(e) =>
+                  setEditRoom((r) => (r ? { ...r, rate: e.target.value } : r))
                 }
               />
             </Field>
@@ -505,17 +546,21 @@ const Rooms: React.FC<RoomsProps> = () => {
               <Label>Status</Label>
               <select
                 value={editRoom.status}
-                onChange={e =>
-                  setEditRoom(r =>r ?  ({
-                    ...r,
-                    status: e.target.value as 'Available' | 'Booked',
-                  }): r)
+                onChange={(e) =>
+                  setEditRoom((r) =>
+                    r
+                      ? {
+                          ...r,
+                          status: e.target.value as "Available" | "Booked",
+                        }
+                      : r
+                  )
                 }
                 style={{
-                  padding: '0.5rem',
-                  width: '100%',
-                  borderRadius: '4px',
-                  border: '1px solid #ccc',
+                  padding: "0.5rem",
+                  width: "100%",
+                  borderRadius: "4px",
+                  border: "1px solid #ccc",
                 }}
               >
                 <option value="Available">Available</option>
@@ -526,25 +571,21 @@ const Rooms: React.FC<RoomsProps> = () => {
               <Label>Image URL</Label>
               <Input
                 value={editRoom.image}
-                onChange={e =>
-                  setEditRoom(r =>r ? ({ ...r, image: e.target.value }): r)
+                onChange={(e) =>
+                  setEditRoom((r) => (r ? { ...r, image: e.target.value } : r))
                 }
               />
             </Field>
             <Actions>
               <Button
-                $bg= "#c25c5c" 
+                $bg="#c25c5c"
                 $color="#fff"
                 onClick={() => setEditRoom(null)}
               >
-                {t.cancel || 'Cancel'}
+                {t.cancel || "Cancel"}
               </Button>
-              <Button
-                $bg={theme.subtitle}
-                $color="#fff"
-                onClick={handleSave}
-              >
-                {t.save || 'Save'}
+              <Button $bg={theme.subtitle} $color="#fff" onClick={handleSave}>
+                {t.save || "Save"}
               </Button>
             </Actions>
           </Modal>
