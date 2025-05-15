@@ -2,10 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { FiChevronUp, FiChevronDown, FiMoreVertical } from 'react-icons/fi';
 import { Room, MenuState } from '../../types/rooms';
-
 const TableWrapper = styled.div`overflow-x: auto;`;
 const Table = styled.table`width: 100%; border-collapse: collapse;`;
-const Th = styled.th`position: relative; padding: .75rem; border-bottom: 1px solid ${({ theme }) => theme.borderColor}; cursor: pointer; text-align: left;`;
+const Th = styled.th`position: relative; padding: .75rem; border-bottom: 1px solid ${({ theme }) => theme.borderColor}; cursor: pointer; text-align: left; white-space: nowrap;`;
 const SortIcon = styled.span`position: absolute; right: 8px; top: 50%; transform: translateY(-50%); font-size: .75rem;`;
 const Td = styled.td`padding: .75rem; vertical-align: middle; white-space: nowrap;`;
 const CenterTd = styled(Td)`text-align: center;`;
@@ -19,6 +18,25 @@ const Button = styled.button<{ $bg?: string; $color?: string }>`
   background: ${({ $bg, theme }) => $bg || theme.cardBg};
   color: ${({ $color, theme }) => $color || theme.text};
   &:hover { opacity: .9; }
+`;
+
+// Styled Dropdown Menu
+const Menu = styled.ul`
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  padding: .25rem 0;
+  z-index: 1000;
+  list-style: none;
+`;
+const MenuItem = styled.li`
+  padding: .5rem 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  &:hover { background: ${({ theme }) => theme.iconActive}; color: #fff; }
 `;
 
 interface RoomsTableProps {
@@ -74,10 +92,10 @@ export const RoomsTable: React.FC<RoomsTableProps> = ({ data, sortField, sortAsc
               <CenterTd style={{ position: 'relative' }}>
                 <FiMoreVertical style={{ cursor: 'pointer' }} onClick={e => onMore(e, room)} />
                 {menu.visible && menu.room === room && (
-                  <div style={{ position: 'absolute', right: 0, top: '100%' }}>
-                    <button onClick={onEdit}>{langMap.edit || 'Edit'}</button>
-                    <button onClick={onDelete}>{langMap.delete || 'Delete'}</button>
-                  </div>
+                  <Menu>
+                    <MenuItem onClick={onEdit}>{langMap.edit || 'Edit'}</MenuItem>
+                    <MenuItem onClick={onDelete}>{langMap.delete || 'Delete'}</MenuItem>
+                  </Menu>
                 )}
               </CenterTd>
             </tr>
