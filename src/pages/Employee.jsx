@@ -5,7 +5,7 @@ import { LanguageContext } from '../context/LanguageContext';
 import { fetchEmployees, createEmployee, updateEmployee, deleteEmployee } from '../features/employees/employeesSlice';
 import { FiMoreVertical, FiChevronUp, FiChevronDown } from 'react-icons/fi';
 import { FaPhoneAlt } from 'react-icons/fa';
-import EmployeeModal from '../components/EmployeeModal';
+import EmployeeModal from '../components/moldals/EmployeeModal';
 
 const Page = styled.div`padding:1rem;`;
 const Header = styled.div`display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;`;

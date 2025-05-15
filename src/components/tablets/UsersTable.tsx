@@ -23,6 +23,22 @@ const Button = styled.button<{ $bg?: string; $color?: string; }>`
   color: ${({ $color, theme }) => $color || theme.text};
   &:hover { opacity: .9; }
 `;
+// Styled dropdown menu
+const Menu = styled.ul`
+  position: absolute; right: 0; top: 100%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  padding: .25rem 0;
+  z-index: 1000;
+  list-style: none;
+`;
+const MenuItem = styled.li`
+  padding: .5rem 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  &:hover { background: ${({ theme }) => theme.iconActive}; color: #fff; }
+`;
 
 interface UsersTableProps {
   data: User[];
@@ -32,6 +48,8 @@ interface UsersTableProps {
   onViewNotes: (note: string) => void;
   onOpenMenu: (e: React.MouseEvent, user: User) => void;
   menu: MenuState;
+  onEdit: () => void;
+  onDelete: () => void;
   lang: 'es' | 'en';
 }
 
@@ -43,6 +61,8 @@ export const UsersTable: React.FC<UsersTableProps> = ({
   onViewNotes,
   onOpenMenu,
   menu,
+  onEdit,
+  onDelete,
   lang,
 }) => {
   const locale = lang === 'es' ? es : enUS;
@@ -108,9 +128,10 @@ export const UsersTable: React.FC<UsersTableProps> = ({
                   onClick={e => onOpenMenu(e, u)}
                 />
                 {menu.visible && menu.user === u && (
-                  <div style={{ position: 'absolute', right: 0, top: '100%' }}>
-                    {/* Aquí monta tu <Menu> con acciones Edit/Delete */}
-                  </div>
+                  <Menu>
+                    <MenuItem onClick={onEdit}>{lang === 'es' ? 'Editar' : 'Edit'}</MenuItem>
+                    <MenuItem onClick={onDelete}>{lang === 'es' ? 'Eliminar' : 'Delete'}</MenuItem>
+                  </Menu>
                 )}
               </CenterTd>
             </tr>
