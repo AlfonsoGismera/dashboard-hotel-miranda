@@ -2,14 +2,10 @@ import React, { useState, useMemo, useContext, useEffect } from "react";
 import styled, { useTheme } from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { LanguageContext } from "../context/LanguageContext";
-import {
-  fetchRooms,
-  createRoom,
-  updateRoom,
-  deleteRoom,} from "../features/rooms/roomsSlice";
+import {fetchRooms, createRoom, updateRoom,deleteRoom,} from "../features/rooms/roomsSlice";
 import { FiMoreVertical, FiChevronUp, FiChevronDown } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
-import { Room, MenuState, RoomsProps } from "../types/rooms"; // Importa las interfaces
+import { Room, MenuState, RoomsProps } from "../types/rooms";
 import { UnknownAction } from "redux";
 
 const Page = styled.div`
@@ -48,12 +44,12 @@ const AddButton = styled.button`
 `;
 
 const TableWrapper = styled.div`
-  overflow-x: auto;
-`;
+  overflow-x: auto;`;
+
 const Table = styled.table`
   width: 100%;
-  border-collapse: collapse;
-`;
+  border-collapse: collapse; `;
+
 const Th = styled.th`
   position: relative;
   padding: 0.75rem;

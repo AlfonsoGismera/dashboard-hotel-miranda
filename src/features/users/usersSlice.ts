@@ -2,12 +2,12 @@ import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import initialData from '../../data/guests.json';
 import { User } from '../../types/users';
 
-// Seed localStorage on first load
+
 if (!localStorage.getItem('users')) {
   localStorage.setItem('users', JSON.stringify(initialData as User[]));
 }
 
-// Fake API simulating asynchronous storage operations
+
 const fakeApi = {
   fetchAll: (): Promise<User[]> =>
     new Promise(res =>
