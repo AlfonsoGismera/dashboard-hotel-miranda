@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import roomList from '../../data/roomList.json';
-import { Room } from '../../types/rooms'; // Importa la interfaz Room
+import { Room } from '../../types/rooms';
 
 interface RoomsState {
   items: Room[];
@@ -54,7 +54,7 @@ const fakeApi = {
     ),
 };
 
-export const fetchRooms = createAsyncThunk<Room[], void>( // Define tipos para el valor de retorno y el argumento
+export const fetchRooms = createAsyncThunk<Room[], void>( 
   'rooms/fetchAll',
   async () => await fakeApi.fetchAll()
 );

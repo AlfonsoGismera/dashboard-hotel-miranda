@@ -1,4 +1,3 @@
-// src/features/users/usersSlice.ts
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import initialData from '../../data/guests.json';
 import { User } from '../../types/users';
@@ -50,13 +49,12 @@ const fakeApi = {
     ),
 };
 
-// Thunks with proper generics for TypeScript
+
 export const fetchUsers = createAsyncThunk<User[], void>('users/fetchAll', () => fakeApi.fetchAll());
 export const createUser = createAsyncThunk<User, User>('users/create', u => fakeApi.create(u));
 export const updateUser = createAsyncThunk<User, User>('users/update', u => fakeApi.update(u));
 export const deleteUser = createAsyncThunk<string, string>('users/delete', id => fakeApi.remove(id));
 
-// Slice state interface
 type UsersState = {
   items: User[];
   status: 'idle' | 'loading' | 'succeeded' | 'failed';
