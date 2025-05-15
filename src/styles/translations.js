@@ -78,6 +78,8 @@ const translations = {
     status: "Status",
     active: "Active",
     inactive: "Inactive",
+    joined: "Joined on {date}",
+    
 
     // Room List page translations
     roomname: "Room Name",
@@ -177,6 +179,8 @@ const translations = {
     status: "Estado",
     active: "Activo",
     inactive: "Inactivo",
+    joined: "Incorporado el {date}",
+
 
     // Room List page translations
     roomname: "Nombre de Habitación",

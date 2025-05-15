@@ -127,7 +127,7 @@ export default function Users() {
       specialRequest: '',
       roomType: '',
       status: 'Pending',
-      image: 'https://randomuser.me/api/portraits/lego/1.jpg',
+      image: 'https://randomuser.me/api/portraits/women/24.jpg',
     });
   };
   const handleSave = () => {
