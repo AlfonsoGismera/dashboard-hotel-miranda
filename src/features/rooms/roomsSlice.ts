@@ -43,6 +43,7 @@ const fakeApi = {
         res(room);
       }, 200)
     ),
+    
   remove: (id: string): Promise<string> =>
     new Promise(res =>
       setTimeout(() => {
