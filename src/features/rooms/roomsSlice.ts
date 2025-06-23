@@ -36,6 +36,7 @@ const fakeApi = {
     ),
     
     
+    
   update: (room: Room): Promise<Room> =>
     new Promise(res =>
       setTimeout(() => {
